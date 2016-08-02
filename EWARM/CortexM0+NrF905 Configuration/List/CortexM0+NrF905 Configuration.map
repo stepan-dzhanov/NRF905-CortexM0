@@ -1,0 +1,399 @@
+###############################################################################
+#
+# IAR ELF Linker V7.40.1.8447/W32 for ARM                 01/Aug/2016  14:49:35
+# Copyright 2007-2015 IAR Systems AB.
+#
+#    Output file  =  
+#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\CortexM0+NrF905\EWARM\CortexM0+NrF905
+#        Configuration\Exe\CortexM0+NrF905 Configuration.out
+#    Map file     =  
+#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\CortexM0+NrF905\EWARM\CortexM0+NrF905
+#        Configuration/List\CortexM0+NrF905 Configuration.map
+#    Command line =  
+#        "D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\CortexM0+NrF905\EWARM\CortexM0+NrF905
+#        Configuration\Obj\main.o"
+#        "D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\CortexM0+NrF905\EWARM\CortexM0+NrF905
+#        Configuration\Obj\nrf905_driver.o"
+#        "D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\CortexM0+NrF905\EWARM\CortexM0+NrF905
+#        Configuration\Obj\startup_stm32f051x8.o"
+#        "D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\CortexM0+NrF905\EWARM\CortexM0+NrF905
+#        Configuration\Obj\stm32f0xx_hal.o"
+#        "D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\CortexM0+NrF905\EWARM\CortexM0+NrF905
+#        Configuration\Obj\stm32f0xx_hal_comp.o"
+#        "D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\CortexM0+NrF905\EWARM\CortexM0+NrF905
+#        Configuration\Obj\stm32f0xx_hal_cortex.o"
+#        "D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\CortexM0+NrF905\EWARM\CortexM0+NrF905
+#        Configuration\Obj\stm32f0xx_hal_dma.o"
+#        "D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\CortexM0+NrF905\EWARM\CortexM0+NrF905
+#        Configuration\Obj\stm32f0xx_hal_flash.o"
+#        "D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\CortexM0+NrF905\EWARM\CortexM0+NrF905
+#        Configuration\Obj\stm32f0xx_hal_flash_ex.o"
+#        "D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\CortexM0+NrF905\EWARM\CortexM0+NrF905
+#        Configuration\Obj\stm32f0xx_hal_gpio.o"
+#        "D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\CortexM0+NrF905\EWARM\CortexM0+NrF905
+#        Configuration\Obj\stm32f0xx_hal_msp.o"
+#        "D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\CortexM0+NrF905\EWARM\CortexM0+NrF905
+#        Configuration\Obj\stm32f0xx_hal_pwr.o"
+#        "D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\CortexM0+NrF905\EWARM\CortexM0+NrF905
+#        Configuration\Obj\stm32f0xx_hal_pwr_ex.o"
+#        "D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\CortexM0+NrF905\EWARM\CortexM0+NrF905
+#        Configuration\Obj\stm32f0xx_hal_rcc.o"
+#        "D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\CortexM0+NrF905\EWARM\CortexM0+NrF905
+#        Configuration\Obj\stm32f0xx_hal_rcc_ex.o"
+#        "D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\CortexM0+NrF905\EWARM\CortexM0+NrF905
+#        Configuration\Obj\stm32f0xx_hal_spi.o"
+#        "D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\CortexM0+NrF905\EWARM\CortexM0+NrF905
+#        Configuration\Obj\stm32f0xx_hal_spi_ex.o"
+#        "D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\CortexM0+NrF905\EWARM\CortexM0+NrF905
+#        Configuration\Obj\stm32f0xx_hal_tim.o"
+#        "D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\CortexM0+NrF905\EWARM\CortexM0+NrF905
+#        Configuration\Obj\stm32f0xx_hal_tim_ex.o"
+#        "D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\CortexM0+NrF905\EWARM\CortexM0+NrF905
+#        Configuration\Obj\stm32f0xx_hal_uart.o"
+#        "D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\CortexM0+NrF905\EWARM\CortexM0+NrF905
+#        Configuration\Obj\stm32f0xx_hal_uart_ex.o"
+#        "D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\CortexM0+NrF905\EWARM\CortexM0+NrF905
+#        Configuration\Obj\stm32f0xx_it.o"
+#        "D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\CortexM0+NrF905\EWARM\CortexM0+NrF905
+#        Configuration\Obj\system_stm32f0xx.o" --redirect _Printf=_PrintfFull
+#        --redirect _Scanf=_ScanfFull -o
+#        "D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\CortexM0+NrF905\EWARM\CortexM0+NrF905
+#        Configuration\Exe\CortexM0+NrF905 Configuration.out" --map
+#        "D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\CortexM0+NrF905\EWARM\CortexM0+NrF905
+#        Configuration/List\CortexM0+NrF905 Configuration.map" --config
+#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\CortexM0+NrF905\EWARM/stm32f051x8_flash.icf
+#        --semihosting --entry __iar_program_start --vfe
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at 0x08000000 { ro section .intvec };
+"P1":  place in [from 0x08000000 to 0x0800ffff] { ro };
+"P2":  place in [from 0x20000000 to 0x20001fff] { rw, block CSTACK, block HEAP };
+
+  Section            Kind        Address    Size  Object
+  -------            ----        -------    ----  ------
+"A1":                                       0xbc
+  .intvec            ro code  0x08000000    0xbc  startup_stm32f051x8.o [1]
+                            - 0x080000bc    0xbc
+
+"P1":                                     0x27ec
+  .text              ro code  0x080000bc   0x7fc  stm32f0xx_hal_rcc.o [1]
+  .text              ro code  0x080008b8    0x5c  stm32f0xx_hal.o [1]
+  .text              ro code  0x08000914    0x34  ABImemcpy.o [4]
+  .text              ro code  0x08000948    0xae  I32DivModFast.o [4]
+  .text              ro code  0x080009f6    0x2a  zero_init3.o [4]
+  .text              ro code  0x08000a20   0x15c  stm32f0xx_hal_msp.o [1]
+  .text              ro code  0x08000b7c   0x13e  stm32f0xx_hal_cortex.o [1]
+  .text              ro code  0x08000cba     0x2  startup_stm32f051x8.o [1]
+  .text              ro code  0x08000cbc     0x2  IntDivZer.o [4]
+  .text              ro code  0x08000cbe     0x2  startup_stm32f051x8.o [1]
+  .text              ro code  0x08000cc0   0x23e  stm32f0xx_hal_gpio.o [1]
+  .text              ro code  0x08000efe     0x2  startup_stm32f051x8.o [1]
+  .text              ro code  0x08000f00   0x5f4  stm32f0xx_hal_uart.o [1]
+  .text              ro code  0x080014f4   0x5b8  stm32f0xx_hal_spi.o [1]
+  .text              ro code  0x08001aac   0x448  stm32f0xx_hal_tim.o [1]
+  .text              ro code  0x08001ef4   0x358  main.o [1]
+  .text              ro code  0x0800224c   0x21c  nrf905_driver.o [1]
+  .text              ro code  0x08002468    0xb4  stm32f0xx_hal_comp.o [1]
+  .text              ro code  0x0800251c    0x5c  stm32f0xx_hal_tim_ex.o [1]
+  .text              ro code  0x08002578   0x116  stm32f0xx_hal_uart_ex.o [1]
+  .text              ro code  0x0800268e     0x2  startup_stm32f051x8.o [1]
+  .text              ro code  0x08002690    0x94  system_stm32f0xx.o [1]
+  .text              ro code  0x08002724    0x30  copy_init3.o [4]
+  .text              ro code  0x08002754    0x2c  stm32f0xx_it.o [1]
+  .text              ro code  0x08002780    0x28  data_init.o [4]
+  .iar.init_table    const    0x080027a8    0x24  - Linker created -
+  .text              ro code  0x080027cc    0x1a  cmain.o [4]
+  .text              ro code  0x080027e6     0x4  low_level_init.o [3]
+  .text              ro code  0x080027ea     0x8  exit.o [3]
+  .text              ro code  0x080027f2     0x2  startup_stm32f051x8.o [1]
+  .text              ro code  0x080027f4     0xa  cexit.o [4]
+  .text              ro code  0x080027fe     0x2  startup_stm32f051x8.o [1]
+  .text              ro code  0x08002800    0x14  exit.o [5]
+  .rodata            const    0x08002814    0x10  stm32f0xx_hal_rcc.o [1]
+  .rodata            const    0x08002824    0x10  stm32f0xx_hal_rcc.o [1]
+  .rodata            const    0x08002834    0x10  stm32f0xx_hal_rcc.o [1]
+  .text              ro code  0x08002844    0x10  startup_stm32f051x8.o [1]
+  .text              ro code  0x08002854     0xc  cstartup_M.o [4]
+  .rodata            const    0x08002860     0x8  nrf905_driver.o [1]
+  .rodata            const    0x08002868     0x8  nrf905_driver.o [1]
+  .text              ro code  0x08002870     0x2  startup_stm32f051x8.o [1]
+  .text              ro code  0x08002872     0x2  startup_stm32f051x8.o [1]
+  .text              ro code  0x08002874     0x2  startup_stm32f051x8.o [1]
+  .text              ro code  0x08002876     0x2  startup_stm32f051x8.o [1]
+  .text              ro code  0x08002878     0x2  startup_stm32f051x8.o [1]
+  .text              ro code  0x0800287a     0x2  startup_stm32f051x8.o [1]
+  .text              ro code  0x0800287c     0x2  startup_stm32f051x8.o [1]
+  .text              ro code  0x0800287e     0x2  startup_stm32f051x8.o [1]
+  .text              ro code  0x08002880     0x2  startup_stm32f051x8.o [1]
+  .text              ro code  0x08002882     0x2  startup_stm32f051x8.o [1]
+  .text              ro code  0x08002884     0x2  startup_stm32f051x8.o [1]
+  .text              ro code  0x08002886     0x2  startup_stm32f051x8.o [1]
+  .text              ro code  0x08002888     0x2  startup_stm32f051x8.o [1]
+  .text              ro code  0x0800288a     0x2  startup_stm32f051x8.o [1]
+  .text              ro code  0x0800288c     0x2  startup_stm32f051x8.o [1]
+  .text              ro code  0x0800288e     0x2  startup_stm32f051x8.o [1]
+  .text              ro code  0x08002890     0x2  startup_stm32f051x8.o [1]
+  .text              ro code  0x08002892     0x2  startup_stm32f051x8.o [1]
+  .text              ro code  0x08002894     0x2  startup_stm32f051x8.o [1]
+  .text              ro code  0x08002896     0x2  startup_stm32f051x8.o [1]
+  .text              ro code  0x08002898     0x2  startup_stm32f051x8.o [1]
+  .text              ro code  0x0800289a     0x2  startup_stm32f051x8.o [1]
+  .text              ro code  0x0800289c     0x2  startup_stm32f051x8.o [1]
+  .text              ro code  0x0800289e     0x2  startup_stm32f051x8.o [1]
+  .text              ro code  0x080028a0     0x2  startup_stm32f051x8.o [1]
+  .rodata            const    0x080028a2     0x0  zero_init3.o [4]
+  .rodata            const    0x080028a2     0x0  copy_init3.o [4]
+  Initializer bytes  const    0x080028a4     0x4  <for P2 s0>
+                            - 0x080028a8  0x27ec
+
+"P2":                                      0x550
+  P2 s0                       0x20000000     0x4  <Init block>
+    .data            inited   0x20000000     0x4  system_stm32f0xx.o [1]
+  .bss               zero     0x20000004    0x70  main.o [1]
+  .bss               zero     0x20000074    0x64  main.o [1]
+  .bss               zero     0x200000d8    0x3c  main.o [1]
+  .bss               zero     0x20000114    0x2c  main.o [1]
+  .bss               zero     0x20000140     0x4  nrf905_driver.o [1]
+  .bss               zero     0x20000144     0x4  nrf905_driver.o [1]
+  .bss               zero     0x20000148     0x4  stm32f0xx_hal.o [1]
+  .bss               zero     0x2000014c     0x1  nrf905_driver.o [1]
+  .bss               zero     0x2000014d     0x1  nrf905_driver.o [1]
+  CSTACK                      0x20000150   0x400  <Block>
+    CSTACK           uninit   0x20000150   0x400  <Block tail>
+                            - 0x20000550   0x550
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x14a:
+          0x20000004  0x14a
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x4:
+          0x080028a4    0x4
+    1 destination range, total size 0x4:
+          0x20000000    0x4
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                   ro code  ro data  rw data
+    ------                   -------  -------  -------
+D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\CortexM0+NrF905\EWARM\CortexM0+NrF905 Configuration\Obj: [1]
+    main.o                       856               316
+    nrf905_driver.o              540       16       10
+    startup_stm32f051x8.o        266
+    stm32f0xx_hal.o               92                 4
+    stm32f0xx_hal_comp.o         180
+    stm32f0xx_hal_cortex.o       318
+    stm32f0xx_hal_gpio.o         574
+    stm32f0xx_hal_msp.o          348
+    stm32f0xx_hal_rcc.o        2 044       48
+    stm32f0xx_hal_spi.o        1 464
+    stm32f0xx_hal_tim.o        1 096
+    stm32f0xx_hal_tim_ex.o        92
+    stm32f0xx_hal_uart.o       1 524
+    stm32f0xx_hal_uart_ex.o      278
+    stm32f0xx_it.o                44
+    system_stm32f0xx.o           148        4        4
+    --------------------------------------------------
+    Total:                     9 864       68      334
+
+command line: [2]
+    --------------------------------------------------
+    Total:
+
+dl6M_tlf.a: [3]
+    exit.o                         8
+    low_level_init.o               4
+    --------------------------------------------------
+    Total:                        12
+
+rt6M_tl.a: [4]
+    ABImemcpy.o                   52
+    I32DivModFast.o              174
+    IntDivZer.o                    2
+    cexit.o                       10
+    cmain.o                       26
+    copy_init3.o                  48
+    cstartup_M.o                  12
+    data_init.o                   40
+    zero_init3.o                  42
+    --------------------------------------------------
+    Total:                       406
+
+shb_l.a: [5]
+    exit.o                        20
+    --------------------------------------------------
+    Total:                        20
+
+    Linker created                         38    1 024
+------------------------------------------------------
+    Grand Total:              10 302      106    1 358
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+.iar.init_table$$Base   0x080027a8          --   Gb  - Linker created -
+.iar.init_table$$Limit  0x080027cc          --   Gb  - Linker created -
+?main                   0x080027cd         Code  Gb  cmain.o [4]
+CSTACK$$Base            0x20000150          --   Gb  - Linker created -
+CSTACK$$Limit           0x20000550          --   Gb  - Linker created -
+Delay_us                0x0800224d   0x16  Code  Gb  nrf905_driver.o [1]
+EXTI4_15_IRQHandler     0x08002761   0x12  Code  Gb  stm32f0xx_it.o [1]
+HAL_COMP_Init           0x08002469   0xa4  Code  Gb  stm32f0xx_hal_comp.o [1]
+HAL_COMP_MspInit        0x08000a4b   0x28  Code  Gb  stm32f0xx_hal_msp.o [1]
+HAL_GPIO_EXTI_Callback  0x08000efd    0x2  Code  Wk  stm32f0xx_hal_gpio.o [1]
+HAL_GPIO_EXTI_IRQHandler
+                        0x08000eb3   0x20  Code  Gb  stm32f0xx_hal_gpio.o [1]
+HAL_GPIO_Init           0x08000cc1  0x1de  Code  Gb  stm32f0xx_hal_gpio.o [1]
+HAL_GPIO_WritePin       0x08000e9f   0x14  Code  Gb  stm32f0xx_hal_gpio.o [1]
+HAL_GetTick             0x08000905    0x6  Code  Wk  stm32f0xx_hal.o [1]
+HAL_IncTick             0x080008f9    0xc  Code  Wk  stm32f0xx_hal.o [1]
+HAL_Init                0x080008b9   0x1c  Code  Gb  stm32f0xx_hal.o [1]
+HAL_InitTick            0x080008d5   0x24  Code  Wk  stm32f0xx_hal.o [1]
+HAL_MspInit             0x08000a21   0x2a  Code  Gb  stm32f0xx_hal_msp.o [1]
+HAL_NVIC_EnableIRQ      0x08000c5b    0xe  Code  Gb  stm32f0xx_hal_cortex.o [1]
+HAL_NVIC_SetPriority    0x08000c47   0x14  Code  Gb  stm32f0xx_hal_cortex.o [1]
+HAL_RCC_ClockConfig     0x080005c1  0x200  Code  Gb  stm32f0xx_hal_rcc.o [1]
+HAL_RCC_GetHCLKFreq     0x08000859   0x20  Code  Gb  stm32f0xx_hal_rcc.o [1]
+HAL_RCC_GetPCLK1Freq    0x08000879   0x18  Code  Gb  stm32f0xx_hal_rcc.o [1]
+HAL_RCC_GetSysClockFreq
+                        0x080007d9   0x80  Code  Gb  stm32f0xx_hal_rcc.o [1]
+HAL_RCC_OscConfig       0x080000bd  0x4ea  Code  Gb  stm32f0xx_hal_rcc.o [1]
+HAL_SPI_Init            0x080014f5   0xec  Code  Gb  stm32f0xx_hal_spi.o [1]
+HAL_SPI_MspInit         0x08000a73   0x4c  Code  Gb  stm32f0xx_hal_msp.o [1]
+HAL_SPI_TransmitReceive
+                        0x080015e9  0x318  Code  Gb  stm32f0xx_hal_spi.o [1]
+HAL_SYSTICK_CLKSourceConfig
+                        0x08000c75   0x22  Code  Gb  stm32f0xx_hal_cortex.o [1]
+HAL_SYSTICK_Callback    0x08000cb9    0x2  Code  Wk  stm32f0xx_hal_cortex.o [1]
+HAL_SYSTICK_Config      0x08000c69    0xc  Code  Gb  stm32f0xx_hal_cortex.o [1]
+HAL_SYSTICK_IRQHandler  0x08000cb1    0x8  Code  Gb  stm32f0xx_hal_cortex.o [1]
+HAL_TIMEx_MasterConfigSynchronization
+                        0x0800251d   0x5c  Code  Gb  stm32f0xx_hal_tim_ex.o [1]
+HAL_TIM_PWM_ConfigChannel
+                        0x08001ae7  0x104  Code  Gb  stm32f0xx_hal_tim.o [1]
+HAL_TIM_PWM_Init        0x08001aad   0x3a  Code  Gb  stm32f0xx_hal_tim.o [1]
+HAL_TIM_PWM_MspInit     0x08000abf   0x46  Code  Gb  stm32f0xx_hal_msp.o [1]
+HAL_UARTEx_WakeupCallback
+                        0x0800268d    0x2  Code  Wk  stm32f0xx_hal_uart_ex.o [1]
+HAL_UART_ErrorCallback  0x08000f89    0x2  Code  Wk  stm32f0xx_hal_uart.o [1]
+HAL_UART_IRQHandler     0x08002579  0x114  Code  Gb  stm32f0xx_hal_uart_ex.o [1]
+HAL_UART_Init           0x08000f01   0x7e  Code  Gb  stm32f0xx_hal_uart.o [1]
+HAL_UART_MspInit        0x08000b05   0x5c  Code  Gb  stm32f0xx_hal_msp.o [1]
+HAL_UART_RxCpltCallback
+                        0x08000f87    0x2  Code  Wk  stm32f0xx_hal_uart.o [1]
+HAL_UART_TxCpltCallback
+                        0x08000f85    0x2  Code  Wk  stm32f0xx_hal_uart.o [1]
+MX_COMP1_Init           0x08001fd1   0x40  Code  Lc  main.o [1]
+MX_GPIO_Init            0x0800210d  0x10e  Code  Lc  main.o [1]
+MX_SPI1_Init            0x08002011   0x5e  Code  Lc  main.o [1]
+MX_TIM3_Init            0x0800206f   0x56  Code  Lc  main.o [1]
+MX_USART2_UART_Init     0x080020c5   0x48  Code  Lc  main.o [1]
+NVIC_EnableIRQ          0x08000b7d    0xe  Code  Lc  stm32f0xx_hal_cortex.o [1]
+NVIC_SetPriority        0x08000b8b   0x8a  Code  Lc  stm32f0xx_hal_cortex.o [1]
+Nrf905Init              0x0800232b  0x11e  Code  Gb  nrf905_driver.o [1]
+Nrf905RegCom            0x08002263   0x56  Code  Gb  nrf905_driver.o [1]
+PowerDownMode           0x080022b9   0x12  Code  Gb  nrf905_driver.o [1]
+PowerUpMode             0x080022cb   0x18  Code  Gb  nrf905_driver.o [1]
+Region$$Table$$Base     0x080027a8          --   Gb  - Linker created -
+Region$$Table$$Limit    0x080027cc          --   Gb  - Linker created -
+SPI_EndRxTxTransaction  0x08001a65   0x44  Code  Lc  stm32f0xx_hal_spi.o [1]
+SPI_WaitFifoStateUntilTimeout
+                        0x080019a9   0xba  Code  Lc  stm32f0xx_hal_spi.o [1]
+SPI_WaitFlagStateUntilTimeout
+                        0x08001909   0x9e  Code  Lc  stm32f0xx_hal_spi.o [1]
+SysTick_Config          0x08000c15   0x32  Code  Lc  stm32f0xx_hal_cortex.o [1]
+SysTick_Handler         0x08002755    0xc  Code  Gb  stm32f0xx_it.o [1]
+SystemClock_Config      0x08001f6d   0x64  Code  Gb  main.o [1]
+SystemCoreClock         0x20000000    0x4  Data  Gb  system_stm32f0xx.o [1]
+SystemInit              0x08002691   0x68  Code  Gb  system_stm32f0xx.o [1]
+TIM_Base_SetConfig      0x08001bf1   0x8a  Code  Gb  stm32f0xx_hal_tim.o [1]
+TIM_OC1_SetConfig       0x08001c7b   0x96  Code  Lc  stm32f0xx_hal_tim.o [1]
+TIM_OC2_SetConfig       0x08001d13   0x92  Code  Gb  stm32f0xx_hal_tim.o [1]
+TIM_OC3_SetConfig       0x08001da5   0x92  Code  Lc  stm32f0xx_hal_tim.o [1]
+TIM_OC4_SetConfig       0x08001e51   0x70  Code  Lc  stm32f0xx_hal_tim.o [1]
+TransmitMode            0x080022e3   0x26  Code  Gb  nrf905_driver.o [1]
+TransmitPacket          0x08002309   0x22  Code  Gb  nrf905_driver.o [1]
+UART_AdvFeatureConfig   0x08001123   0xde  Code  Gb  stm32f0xx_hal_uart.o [1]
+UART_CheckIdleState     0x08001209   0x60  Code  Gb  stm32f0xx_hal_uart.o [1]
+UART_EndTransmit_IT     0x08001407   0x3c  Code  Gb  stm32f0xx_hal_uart.o [1]
+UART_Receive_IT         0x08001443   0xac  Code  Gb  stm32f0xx_hal_uart.o [1]
+UART_SetConfig          0x08000f8b  0x196  Code  Gb  stm32f0xx_hal_uart.o [1]
+UART_Transmit_IT        0x08001389   0x7e  Code  Gb  stm32f0xx_hal_uart.o [1]
+UART_WaitOnFlagUntilTimeout
+                        0x0800127d   0xda  Code  Gb  stm32f0xx_hal_uart.o [1]
+USART2_IRQHandler       0x08002773    0xa  Code  Gb  stm32f0xx_it.o [1]
+__ICFEDIT_region_RAM_end__ {Abs}
+                        0x20001fff          --   Gb  command line/config [2]
+__ICFEDIT_region_RAM_start__ {Abs}
+                        0x20000000          --   Gb  command line/config [2]
+__aeabi_idiv0           0x08000cbd         Code  Gb  IntDivZer.o [4]
+__aeabi_memcpy4         0x08000915         Code  Wk  ABImemcpy.o [4]
+__aeabi_uidiv           0x08000949         Code  Gb  I32DivModFast.o [4]
+__aeabi_uidivmod        0x08000949         Code  Gb  I32DivModFast.o [4]
+__cmain                 0x080027cd         Code  Gb  cmain.o [4]
+__exit                  0x08002801   0x14  Code  Gb  exit.o [5]
+__iar_copy_init3        0x08002725   0x30  Code  Gb  copy_init3.o [4]
+__iar_data_init3        0x08002781   0x28  Code  Gb  data_init.o [4]
+__iar_program_start     0x08002855         Code  Gb  cstartup_M.o [4]
+__iar_zero_init3        0x080009f7   0x2a  Code  Gb  zero_init3.o [4]
+__low_level_init        0x080027e7    0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x08000000         Data  Gb  startup_stm32f051x8.o [1]
+_call_main              0x080027d9         Code  Gb  cmain.o [4]
+_exit                   0x080027f5         Code  Gb  cexit.o [4]
+_main                   0x080027e3         Code  Gb  cmain.o [4]
+aAPBAHBPrescTable       0x08002834   0x10  Data  Gb  stm32f0xx_hal_rcc.o [1]
+cntRx                   0x20000144    0x4  Data  Gb  nrf905_driver.o [1]
+cntTx                   0x20000140    0x4  Data  Gb  nrf905_driver.o [1]
+exit                    0x080027eb    0x8  Code  Gb  exit.o [3]
+hcomp1                  0x20000114   0x2c  Data  Gb  main.o [1]
+hspi1                   0x20000074   0x64  Data  Gb  main.o [1]
+htim3                   0x200000d8   0x3c  Data  Gb  main.o [1]
+huart2                  0x20000004   0x70  Data  Gb  main.o [1]
+main                    0x08001ef5   0x78  Code  Gb  main.o [1]
+rxAddr                  0x08002868    0x8  Data  Gb  nrf905_driver.o [1]
+rx_data                 0x2000014d    0x1  Data  Lc  nrf905_driver.o [1]
+txAddr                  0x08002860    0x8  Data  Gb  nrf905_driver.o [1]
+tx_data                 0x2000014c    0x1  Data  Lc  nrf905_driver.o [1]
+uwTick                  0x20000148    0x4  Data  Lc  stm32f0xx_hal.o [1]
+
+
+[1] = D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\CortexM0+NrF905\EWARM\CortexM0+NrF905 Configuration\Obj
+[2] = command line
+[3] = dl6M_tlf.a
+[4] = rt6M_tl.a
+[5] = shb_l.a
+
+  10 302 bytes of readonly  code memory
+     106 bytes of readonly  data memory
+   1 358 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
