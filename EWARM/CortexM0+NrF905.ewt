@@ -1061,10 +1061,19 @@
     <group>
       <name>User</name>
       <file>
+        <name>$PROJ_DIR$\..\Src\ext_irq.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Src\gate_protocol.c</name>
+      </file>
+      <file>
         <name>$PROJ_DIR$\..\Src\main.c</name>
       </file>
       <file>
         <name>$PROJ_DIR$\..\Src\nrf905_driver.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Src\rf_protocol.c</name>
       </file>
       <file>
         <name>$PROJ_DIR$\..\Src\stm32f0xx_hal_msp.c</name>

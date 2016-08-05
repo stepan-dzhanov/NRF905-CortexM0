@@ -35,6 +35,7 @@
 
 /* USER CODE BEGIN Includes */
 #include "nrf905_driver.h"
+#include "gate_protocol.h"
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -70,9 +71,11 @@ static void MX_USART2_UART_Init(void);
 
 int main(void)
 {
- volatile char rc,a;
- char i=0x30;
+
   /* USER CODE BEGIN 1 */
+   volatile char rc,a;
+   char str[64];
+   char i=0x30;
 
   /* USER CODE END 1 */
 
@@ -98,31 +101,25 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   
-   Nrf905Init() ;
+   Nrf905Init(0x6C);
     
     
-   TransmitPacket(0) ;
-   TransmitPacket('S') ;
-   TransmitPacket('t') ;
-   TransmitPacket('e') ;
-   TransmitPacket('p') ;
-   TransmitPacket('a') ;
-   TransmitPacket('n') ;
-   TransmitPacket('?') ;
-   TransmitPacket('!') ;
-   TransmitPacket('.') ;
-   TransmitPacket('.') ;
-   TransmitPacket('.') ;
-         
+ 
+  
    
-   HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
-   while (1);
+   //HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
+  // while (1);
   while (1)
   {
-     rc = ReceivePacket(); 
-     if (rc){
-       a =0;
-     }
+    if (GetDataFromHost(str)){
+      TransmitMultiPacket(str, 32);
+      ClearDataFromHost();
+      
+    }
+   //  rc = ReceivePacket(); 
+    // if (rc){
+     //  a =0;
+   //  }
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
@@ -196,7 +193,7 @@ void MX_SPI1_Init(void)
   hspi1.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLED;
   hspi1.Init.CRCPolynomial = 7;
   hspi1.Init.CRCLength = SPI_CRC_LENGTH_DATASIZE;
-//  hspi1.Init.NSSPMode = SPI_NSS_PULSE_ENABLED;
+  hspi1.Init.NSSPMode = SPI_NSS_PULSE_DISABLED;
   HAL_SPI_Init(&hspi1);
 
 }
@@ -228,6 +225,7 @@ void MX_TIM3_Init(void)
 }
 
 /* USART2 init function */
+#define UART2_IRQ_PRIORITY 8
 void MX_USART2_UART_Init(void)
 {
 
@@ -242,6 +240,12 @@ void MX_USART2_UART_Init(void)
   huart2.Init.OneBitSampling = UART_ONEBIT_SAMPLING_DISABLED ;
   huart2.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
   HAL_UART_Init(&huart2);
+  
+  HAL_NVIC_SetPriority(USART2_IRQn, UART2_IRQ_PRIORITY, 0);
+  HAL_NVIC_EnableIRQ(USART2_IRQn);
+  __HAL_UART_ENABLE_IT(&huart2, UART_IT_RXNE);
+
+
 
 }
 
@@ -295,7 +299,7 @@ void MX_GPIO_Init(void)
 
   /*Configure GPIO pin : DATA_READY_Pin */
   GPIO_InitStruct.Pin = DATA_READY_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(DATA_READY_GPIO_Port, &GPIO_InitStruct);
 

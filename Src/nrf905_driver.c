@@ -31,9 +31,9 @@
 #define TX_PAYLOAD_REG          0x20 // TX PAYLOAD WIDTH REGISTER
 #define RX_PAYLOAD_REG          0x24 // TX PAYLOAD WIDTH REGISTER
 #define RX_PAYLOAD_WEDTH_REG    0x03 // RX PAYLOAD WIDTH REGISTER
-#define RX_PAYLOAD_WEDTH        0x01 // RX PAYLOAD WIDTH 1-32 BYTE (CAN BE CHANGED)
+#define RX_PAYLOAD_WEDTH        0x20 // RX PAYLOAD WIDTH 1-32 BYTE (CAN BE CHANGED)
 #define TX_PAYLOAD_WEDTH_REG    0x04 // TX PAYLOAD WIDTH REGISTER
-#define TX_PAYLOAD_WEDTH        0x01 // TX PAYLOAD WIDTH 1-32 BYTE (CAN BE CHANGED)
+#define TX_PAYLOAD_WEDTH        0x20 // TX PAYLOAD WIDTH 1-32 BYTE (CAN BE CHANGED)
 #define CHANNEL_REG             0x00 // CHANNELS RANGE REGISTER 1-170
 #define CHANNEL                 0x6C // CHANNEL NO 108  (CAN BE CHANGED)
 #define XTAL_REG                0x09 // XTAL SETTING REGISTER
@@ -66,7 +66,17 @@ static unsigned char tx_data, rx_data;
 ************************************************************************/
 
 extern SPI_HandleTypeDef hspi1;
+static char tx_status=0;
 
+char GetTxStatus()      {
+  return tx_status;
+}
+void sTxStatus ()     {
+  tx_status = 1;
+}
+void rTxStatus ()     {
+  tx_status = 0;
+}
 
 
 void Delay_us(int delay)        {
@@ -100,23 +110,79 @@ void PowerUpMode(void)
   }
 void  TransmitMode(void)
   {
+   
     NRF905_TXEN_HIGH;
     NRF905_CE_HIGH;
     Delay_us(10);
+    
   }
 void ReceiveMode(void)
-  {
+  { 
+    
+   
     NRF905_TXEN_LOW;
     NRF905_CE_HIGH;
     Delay_us(10);
   }
 void TransmitPacket(unsigned short dByte)
   {
-     TransmitMode();
+     sTxStatus();
+     
      Nrf905RegCom(TX_PAYLOAD_REG,dByte);  // Transmit payload
+     TransmitMode();
      NRF905_CE_LOW;           // end trasmit mode
+     
+     NRF905_TXEN_LOW;
+     NRF905_CE_HIGH;
+     Delay_us(10);
+     //ReceiveMode();
   }
-void Nrf905Init(void)
+void TransmitMultiPacket(unsigned char *dByte, char num)
+  {
+     char i;
+     NRF905_CSN_LOW;
+     //sTxStatus();
+     
+     tx_data = TX_PAYLOAD_REG;
+     HAL_SPI_TransmitReceive(&hspi1, &tx_data, &rx_data, 1, 100);
+     for (i=0; i<num; i++) {
+       tx_data = dByte[i];
+       HAL_SPI_TransmitReceive(&hspi1, &tx_data, &rx_data, 1, 100);
+       
+     }
+     NRF905_CSN_HIGH;
+     Delay_us(1);
+     
+     TransmitMode();
+     NRF905_CE_LOW;           // end trasmit mode
+     
+     NRF905_TXEN_LOW;
+     NRF905_CE_HIGH;
+     Delay_us(10);
+     //ReceiveMode();
+  }
+
+char ReceiveMultiPacket(unsigned char *data, char num)
+ {
+   char recieve =0;
+   char ddata[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+     NRF905_CE_LOW;
+     NRF905_CSN_LOW;
+     tx_data = RX_PAYLOAD_REG;
+     HAL_SPI_TransmitReceive(&hspi1, &tx_data, &rx_data, 1, 100);//TM_SPI_Send(NRF905_SPI,RX_PAYLOAD_REG);
+     tx_data = INIT;
+     HAL_SPI_TransmitReceive(&hspi1, ddata, data, num, 100);//receive=TM_SPI_Send(NRF905_SPI,INIT);
+     NRF905_CSN_HIGH;
+     ReceiveMode();
+     return 1 ;  
+     
+ }
+
+
+
+
+
+void Nrf905Init(char ch)
 {
     
     
@@ -130,7 +196,7 @@ void Nrf905Init(void)
     Delay_us(5000);
     
     PowerDownMode();                                    //enable spi write mode
-    Nrf905RegCom(CHANNEL_REG, CHANNEL);                //CHANNELS 1 TO 170
+    Nrf905RegCom(CHANNEL_REG, ch);                //CHANNELS 1 TO 170
     Nrf905RegCom(XTAL_REG, _16MHZ);                      //XTAL
     Nrf905RegCom(TXRX_ADDR_WIDTH_REG, _4BYTE);           //TX/RX address width
     Nrf905RegCom(TX_PAYLOAD_WEDTH_REG, TX_PAYLOAD_WEDTH);  //Tx payload width
@@ -148,12 +214,13 @@ void Nrf905Init(void)
     for (cntRx=INIT;cntRx<_4_BYTE;cntRx++)
     Nrf905RegCom((cntRx+RX_REG_LOC),rxAddr[cntRx]);  //RX address 4 bytes
     PowerUpMode();              // Exit programing mode & power up nrf905 unit
+    ReceiveMode();
   }
 unsigned short ReceivePacket(void)
  {
    char recieve =0;
-   ReceiveMode();
-   if(HAL_GPIO_ReadPin(DATA_READY_GPIO_Port, DATA_READY_Pin)){
+ //  ReceiveMode();
+  // if(HAL_GPIO_ReadPin(DATA_READY_GPIO_Port, DATA_READY_Pin)){
      NRF905_CE_LOW;
      NRF905_CSN_LOW;
      tx_data = RX_PAYLOAD_REG;
@@ -161,9 +228,10 @@ unsigned short ReceivePacket(void)
      tx_data = INIT;
      HAL_SPI_TransmitReceive(&hspi1, &tx_data, &rx_data, 1, 100);//receive=TM_SPI_Send(NRF905_SPI,INIT);
      NRF905_CSN_HIGH;
+     ReceiveMode();
      return rx_data ;     // Return recieved data
      
-   }
+  // }
     
  //  NRF905_CE_LOW;
   // NRF905_CSN_LOW;
