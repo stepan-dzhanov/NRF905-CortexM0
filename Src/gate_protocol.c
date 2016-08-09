@@ -43,7 +43,7 @@ void CommandProcessor(char command) {
     HAL_UART_Transmit(&huart2,str, strlen(str), 1000);
     break;
   case 2:
-    Nrf905Init(RxData[6]);    // Channe number
+    Nrf905Init(RxData[6]);    // Channel number
     sprintf(str,"OK\n\r");
     HAL_UART_Transmit(&huart2,str, strlen(str), 1000);
     break;

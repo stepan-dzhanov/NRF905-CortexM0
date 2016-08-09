@@ -14,7 +14,6 @@ void RF_Receive()       {
   rx_buff[32] = 0x0A;
   rx_buff[33] = 0x0D;
   HAL_UART_Transmit(&huart2,rx_buff, 34, 1000);
-  
   //rx_buff[ptr++] 
   
   

@@ -3,5 +3,8 @@
 
 __weak void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin);
 
+char GetDoorSensorState() ;
+char GetButtonState() ;
+
 
 #endif
