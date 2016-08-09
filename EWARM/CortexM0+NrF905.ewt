@@ -3,7 +3,7 @@
 <project>
   <fileVersion>2</fileVersion>
   <configuration>
-    <name>CortexM0+NrF905 Configuration</name>
+    <name>CortexM0+NrF905</name>
     <toolchain>
       <name>ARM</name>
     </toolchain>
@@ -1067,6 +1067,9 @@
         <name>$PROJ_DIR$\..\Src\gate_protocol.c</name>
       </file>
       <file>
+        <name>$PROJ_DIR$\..\Src\host_protocol.c</name>
+      </file>
+      <file>
         <name>$PROJ_DIR$\..\Src\main.c</name>
       </file>
       <file>
@@ -1080,6 +1083,9 @@
       </file>
       <file>
         <name>$PROJ_DIR$\..\Src\stm32f0xx_it.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Src\timer.c</name>
       </file>
     </group>
   </group>
@@ -1115,6 +1121,12 @@
         <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_gpio.c</name>
       </file>
       <file>
+        <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_i2c.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_i2c_ex.c</name>
+      </file>
+      <file>
         <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_pwr.c</name>
       </file>
       <file>
@@ -1125,6 +1137,12 @@
       </file>
       <file>
         <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_rcc_ex.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_rtc.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_rtc_ex.c</name>
       </file>
       <file>
         <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_spi.c</name>

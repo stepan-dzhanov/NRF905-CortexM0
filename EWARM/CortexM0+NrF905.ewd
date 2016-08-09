@@ -2,7 +2,7 @@
 <project>
   <fileVersion>2</fileVersion>
   <configuration>
-    <name>CortexM0+NrF905 Configuration</name>
+    <name>CortexM0+NrF905</name>
     <toolchain>
       <name>ARM</name>
     </toolchain>
