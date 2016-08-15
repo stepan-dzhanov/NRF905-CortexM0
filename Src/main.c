@@ -125,8 +125,10 @@ int main(void)
  //  HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
  // PowerUpMode();
    ReceiveMode();
-   while (!GetDataFromHost(rx_data));
+   //while (1);
+  sprintf(str,"qwertyuiopasdfghjklzxcvbnmqwerty");
   TransmitMultiPacket(str, 32);
+  HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
   while(1);
  //  PowerDownMode();
    

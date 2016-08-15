@@ -141,6 +141,7 @@ void TransmitMultiPacket(unsigned char *dByte, char num)
   {
      char i;
      NRF905_CSN_LOW;
+     Delay_us(10);
      //sTxStatus();
      
      tx_data = TX_PAYLOAD_REG;
@@ -148,8 +149,9 @@ void TransmitMultiPacket(unsigned char *dByte, char num)
      for (i=0; i<num; i++) {
        tx_data = dByte[i];
        HAL_SPI_TransmitReceive(&hspi1, &tx_data, &rx_data, 1, 100);
-       
+       Delay_us(10);//////////!!!!!!
      }
+    
      NRF905_CSN_HIGH;
      Delay_us(1);
      
