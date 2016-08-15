@@ -106,9 +106,9 @@ int main(void)
     
  
   
-  // TransmitMultiPacket(str, 32);
-  // HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
-  // while (1);
+   //TransmitMultiPacket(str, 32);
+   //HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
+   //while (1);
   while (1)
   {
     if (GetDataFromHost(str)){

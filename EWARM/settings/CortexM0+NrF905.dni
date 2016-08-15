@@ -12,7 +12,7 @@ ByteLimit=50
 stlinkserialNo=2798FD0D
 stlinkfoundProbes=
 [DebugChecksum]
-Checksum=-1067316543
+Checksum=1554376501
 [Exceptions]
 StopOnUncaught=_ 0
 StopOnThrow=_ 0
@@ -67,8 +67,10 @@ SumSortOrder=0
 [Disassemble mode]
 mode=0
 [Breakpoints2]
-Bp0=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\Src\ext_irq.c}.13.12" 0 0 1 "" 0 "" 0
-Count=1
+Bp0=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\Src\stm32f0xx_it.c}.107.1" 0 0 1 "" 0 "" 0
+Bp1=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Src\ext_irq.c}.13.12" 0 0 1 "" 0 "" 0
+Bp2=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Src\stm32f0xx_it.c}.80.3" 0 0 1 "" 0 "" 0
+Count=3
 [Log file]
 LoggingEnabled=_ 0
 LogFile=_ ""
