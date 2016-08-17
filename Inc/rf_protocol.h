@@ -3,5 +3,6 @@
 
 void RF_Receive();
 
+char GetDataFromAir(char *rx_data);
 
 #endif

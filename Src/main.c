@@ -102,11 +102,11 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_COMP1_Init();
+ // MX_COMP1_Init();
   MX_RTC_Init();
   MX_SPI1_Init();
-  MX_TIM3_Init();
-  MX_USART2_UART_Init();
+ // MX_TIM3_Init();
+ // MX_USART2_UART_Init();
 
   /* USER CODE BEGIN 2 */
 
@@ -119,21 +119,25 @@ int main(void)
 
  
    Nrf905Init(0x6C);
-   //PowerDownMode();
+    TransmitMultiPacket(str,32);
+  // PowerDownMode();
    
   // HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFI);
  //  HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
  // PowerUpMode();
-   ReceiveMode();
+ //  ReceiveMode();
    //while (1);
-  sprintf(str,"qwertyuiopasdfghjklzxcvbnmqwerty");
-  TransmitMultiPacket(str, 32);
-  HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
-  while(1);
+ // sprintf(str,"qwertyuiopasdfghjklzxcvbnmqwerty");
+ // TransmitMultiPacket(str,32);
+  //HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
+  //while(1) {
+   // for (int i=0; i<0xFFFFFF; i++);
+   // TransmitMultiPacket(str, 32);
+  //}
  //  PowerDownMode();
    
    //HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
-  // while (1);
+   
   while (1)
   {
     
@@ -144,27 +148,33 @@ int main(void)
    if (GetDoorSensorState())sprintf(str, "iam%cdoor\n",ADDR);
    if (GetButtonState())sprintf(str, "iam%cbutton\n",ADDR);
    if (timeout_flag) {
-     sprintf(str, "iam%cnbat\n",ADDR);
+     sprintf(str, "iam%cnbat                        \n",ADDR);
      timeout_flag =0;
    }
    TransmitMultiPacket(str, 32);
    ReceiveMode();
-   SetTimer(1000);
-   while(GetTimer()>0);
-   if (GetDataFromHost(rx_data))        {
-     if (rx_data[0]==ADDR)      {
-       HostCommandParcer (&rx_data[1],str);
-       TransmitMultiPacket(str, 32);
-       ClearDataFromHost();
+   SetTimer(300);
+   while(GetTimer()>0){
+     if (GetDataFromAir(rx_data))        {
+    
+   
+       if (rx_data[0]==ADDR)      {
        
+         HostCommandParcer (&rx_data[1],str);
+         TransmitMultiPacket(str, 32);
+      
+       
+       }
+       ClearDataFromHost();
+       break;
      }
-     
    }
    
    ReceiveMode();
    PowerDownMode();
    MX_RTC_Init();
    HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET); 
+    
     
     
     
@@ -317,7 +327,7 @@ static void MX_SPI1_Init(void)
   hspi1.Init.CLKPolarity = SPI_POLARITY_LOW;
   hspi1.Init.CLKPhase = SPI_PHASE_1EDGE;
   hspi1.Init.NSS = SPI_NSS_SOFT;
-  hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_8;
+  hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_16;
   hspi1.Init.FirstBit = SPI_FIRSTBIT_MSB;
   hspi1.Init.TIMode = SPI_TIMODE_DISABLE;
   hspi1.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;

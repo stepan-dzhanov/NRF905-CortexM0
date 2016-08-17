@@ -113,7 +113,7 @@ void  TransmitMode(void)
    
     NRF905_TXEN_HIGH;
     NRF905_CE_HIGH;
-    Delay_us(10);
+    Delay_us(100);
     
   }
 void ReceiveMode(void)
@@ -142,7 +142,7 @@ void TransmitMultiPacket(unsigned char *dByte, char num)
      char i;
      NRF905_CSN_LOW;
      Delay_us(10);
-     //sTxStatus();
+     sTxStatus();
      
      tx_data = TX_PAYLOAD_REG;
      HAL_SPI_TransmitReceive(&hspi1, &tx_data, &rx_data, 1, 100);
@@ -153,7 +153,23 @@ void TransmitMultiPacket(unsigned char *dByte, char num)
      }
     
      NRF905_CSN_HIGH;
-     Delay_us(1);
+     Delay_us(10);//10
+     /* NRF905_CSN_LOW;
+     Delay_us(10);
+     //sTxStatus();
+     
+     tx_data = TX_PAYLOAD_REG+1;
+     HAL_SPI_TransmitReceive(&hspi1, &tx_data, &rx_data, 1, 100);
+     for (i=0; i<num; i++) {
+       
+       HAL_SPI_TransmitReceive(&hspi1, &tx_data, &rx_data, 1, 100);
+       dByte[i] = rx_data;
+       Delay_us(10);//////////!!!!!!
+     }
+    
+     NRF905_CSN_HIGH;*/
+     
+     
      
      TransmitMode();
      NRF905_CE_LOW;           // end trasmit mode

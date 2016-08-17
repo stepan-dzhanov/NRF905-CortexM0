@@ -20,7 +20,11 @@ void HostCommandParcer (char *packet, char *str){
     if(!memcmp(packet,hstrings[i],strlen(hstrings[i]))) break;
       
     }
-    if (i==MAX_COMMAND_HOST) return;
+   if (i==MAX_COMMAND_HOST) {
+      sprintf(str,"Invalid command%c               \n", ADDR);
+      return;
+   }
+   
    
   
     switch (i){
@@ -29,35 +33,36 @@ void HostCommandParcer (char *packet, char *str){
       break;
       
     case 1:                                // Water delivery
-      sprintf(str,"OK%c\n", ADDR);
+      sprintf(str,"OK%c                            \n", ADDR);
       HAL_GPIO_WritePin( CH1_GPIO_Port, CH1_Pin, GPIO_PIN_SET);
       SetTimer(1000*(packet[3]*10 +packet[4] ));
       HAL_GPIO_WritePin( CH1_GPIO_Port, CH1_Pin, GPIO_PIN_RESET); 
       break;
      case 2:                                // ch1 ON
-      sprintf(str,"OK%c\n", ADDR);
+      sprintf(str,"OK%c                            \n", ADDR);
       HAL_GPIO_WritePin( CH1_GPIO_Port, CH1_Pin, GPIO_PIN_SET);
       break;
      case 3:                                // ch1 OFF
-      sprintf(str,"OK%c\n", ADDR);
+      sprintf(str,"OK%c                            \n", ADDR);
       HAL_GPIO_WritePin( CH1_GPIO_Port, CH1_Pin, GPIO_PIN_RESET);
       break;
      case 4:                                // ch2 ON
-      sprintf(str,"OK%c\n", ADDR);
+      sprintf(str,"OK%c                            \n", ADDR);
       HAL_GPIO_WritePin( CH2_GPIO_Port, CH2_Pin, GPIO_PIN_SET);
       break;
      case 5:                                // ch2 OFF
-      sprintf(str,"OK%c\n", ADDR);
+      sprintf(str,"OK%c                            \n", ADDR);
       HAL_GPIO_WritePin( CH2_GPIO_Port, CH2_Pin, GPIO_PIN_RESET);
       break;
      case 6:                                // pwm
-      sprintf(str,"OK%c\n", ADDR);
+      sprintf(str,"OK%c                            \n", ADDR);
       ;
       break;
       
       
     
     default:
+      sprintf(str,"Invalid command%c               \n", ADDR);
       ;
       break;
       
