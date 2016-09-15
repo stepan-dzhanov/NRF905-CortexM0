@@ -81,7 +81,7 @@ void rTxStatus ()     {
 
 void Delay_us(int delay)        {
   int i;
-  for(i=0;i<delay*1000;i++);
+  for(i=0;i<delay*4;i++);
 }
 
 
@@ -91,10 +91,12 @@ void Nrf905RegCom (unsigned short RegCom, unsigned short RegValue)
     
     
     NRF905_CSN_LOW;
+    Delay_us(10);
     tx_data = RegCom;
     HAL_SPI_TransmitReceive(&hspi1, &tx_data, &rx_data, 1, 100); //TM_SPI_Send(NRF905_SPI,RegCom);
     tx_data = RegValue;
     HAL_SPI_TransmitReceive(&hspi1, &tx_data, &rx_data, 1, 100);//TM_SPI_Send(NRF905_SPI,RegValue);
+    Delay_us(10);
     NRF905_CSN_HIGH;
     Delay_us(10);
 }
@@ -106,7 +108,7 @@ void PowerDownMode(void)
 void PowerUpMode(void)
   {
     NRF905_PWRUP_HIGH;
-    Delay_us(100);
+    Delay_us(1000);
   }
 void  TransmitMode(void)
   {
@@ -121,12 +123,14 @@ void ReceiveMode(void)
     
    
     NRF905_TXEN_LOW;
-    NRF905_CE_HIGH;
     Delay_us(10);
+    NRF905_CE_HIGH;
+    Delay_us(1200);
   }
 void TransmitPacket(unsigned short dByte)
   {
      sTxStatus();
+     
      
      Nrf905RegCom(TX_PAYLOAD_REG,dByte);  // Transmit payload
      TransmitMode();
@@ -140,6 +144,10 @@ void TransmitPacket(unsigned short dByte)
 void TransmitMultiPacket(unsigned char *dByte, char num)
   {
      char i;
+       
+     NRF905_TXEN_HIGH;
+     Delay_us(900);
+     
      NRF905_CSN_LOW;
      Delay_us(10);
      sTxStatus();
@@ -151,33 +159,19 @@ void TransmitMultiPacket(unsigned char *dByte, char num)
        HAL_SPI_TransmitReceive(&hspi1, &tx_data, &rx_data, 1, 100);
        Delay_us(10);//////////!!!!!!
      }
-    
+     Delay_us(10);
      NRF905_CSN_HIGH;
      Delay_us(10);//10
-     /* NRF905_CSN_LOW;
-     Delay_us(10);
-     //sTxStatus();
-     
-     tx_data = TX_PAYLOAD_REG+1;
-     HAL_SPI_TransmitReceive(&hspi1, &tx_data, &rx_data, 1, 100);
-     for (i=0; i<num; i++) {
-       
-       HAL_SPI_TransmitReceive(&hspi1, &tx_data, &rx_data, 1, 100);
-       dByte[i] = rx_data;
-       Delay_us(10);//////////!!!!!!
-     }
     
-     NRF905_CSN_HIGH;*/
-     
-     
-     
-     TransmitMode();
-     NRF905_CE_LOW;           // end trasmit mode
-     
-     NRF905_TXEN_LOW;
      NRF905_CE_HIGH;
-     Delay_us(10);
-     //ReceiveMode();
+     Delay_us(50);
+     NRF905_CE_LOW;
+     
+     Delay_us(12000);
+     NRF905_TXEN_LOW;
+     
+     
+     
   }
 
 char ReceiveMultiPacket(unsigned char *data, char num)

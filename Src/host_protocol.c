@@ -29,7 +29,7 @@ void HostCommandParcer (char *packet, char *str){
   
     switch (i){
     case 0:
-      sprintf(str,"OK%c\n", ADDR);      // Test communication
+      sprintf(str,"OK%c                           \n", ADDR);      // Test communication
       break;
       
     case 1:                                // Water delivery

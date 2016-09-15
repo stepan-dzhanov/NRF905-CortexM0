@@ -9,10 +9,10 @@ TriggerName=main
 LimitSize=0
 ByteLimit=50
 [stlink]
-stlinkserialNo=99F9E2D4
+stlinkserialNo=2798FD0D
 stlinkfoundProbes=
 [DebugChecksum]
-Checksum=788795616
+Checksum=778768020
 [Exceptions]
 StopOnUncaught=_ 0
 StopOnThrow=_ 0
@@ -67,7 +67,8 @@ SumSortOrder=0
 [Disassemble mode]
 mode=0
 [Breakpoints2]
-Count=0
+Bp0=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Src\main.c}.128.5" 0 0 1 "" 0 "" 0
+Count=1
 [Log file]
 LoggingEnabled=_ 0
 LogFile=_ ""

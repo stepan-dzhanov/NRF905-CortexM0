@@ -69,7 +69,7 @@ static void MX_USART2_UART_Init(void);
 
 void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 
-char timeout_flag=0;
+volatile char timeout_flag=0;
 
 
 /* USER CODE BEGIN PFP */
@@ -87,6 +87,7 @@ int main(void)
   /* USER CODE BEGIN 1 */
    volatile char rc,a;
    char str[64];
+   char tstr[64];
    char rx_data[64];
    char i=0x30;
 
@@ -114,12 +115,19 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  
+    
+  
+  
+  
   for (int i=0; i<0xFFFFFF; i++);
   
 
  
-   Nrf905Init(0x6C);
-    TransmitMultiPacket(str,32);
+    Nrf905Init(0x6C);
+    ReceiveMode();
+    sprintf(str, "iam%cybat                        \n",ADDR);
+   // TransmitMultiPacket(str,32);
   // PowerDownMode();
    
   // HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFI);
@@ -137,11 +145,14 @@ int main(void)
  //  PowerDownMode();
    
    //HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
-   
+  
+    
+    
+  
   while (1)
   {
     
-   HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFI);
+   //HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFI);
    HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
    PowerUpMode();
    ReceiveMode();
@@ -153,7 +164,7 @@ int main(void)
    }
    TransmitMultiPacket(str, 32);
    ReceiveMode();
-   SetTimer(300);
+   SetTimer(300);//300
    while(GetTimer()>0){
      if (GetDataFromAir(rx_data))        {
     
@@ -161,8 +172,9 @@ int main(void)
        if (rx_data[0]==ADDR)      {
        
          HostCommandParcer (&rx_data[1],str);
-         TransmitMultiPacket(str, 32);
-      
+         sprintf(tstr,"OKAY%c\n", ADDR); 
+         TransmitMultiPacket(tstr, 32);
+         
        
        }
        ClearDataFromHost();
@@ -174,6 +186,11 @@ int main(void)
    PowerDownMode();
    MX_RTC_Init();
    HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET); 
+   
+ //  SetTimer(5000);
+ //  while(GetTimer()>0);
+   
+   HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFI);
     
     
     
@@ -300,7 +317,7 @@ static void MX_RTC_Init(void)
     */
   sAlarm.AlarmTime.Hours = 0x0;
   sAlarm.AlarmTime.Minutes = 0x0;
-  sAlarm.AlarmTime.Seconds = 0x59;
+  sAlarm.AlarmTime.Seconds = 0x10;
   sAlarm.AlarmTime.SubSeconds = 0x0;
   sAlarm.AlarmTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
   sAlarm.AlarmTime.StoreOperation = RTC_STOREOPERATION_RESET;

@@ -8,6 +8,8 @@
 
 
 
+void Delay_us(int delay);
+
 
 
 void Nrf905Init(char ch);
