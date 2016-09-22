@@ -142,13 +142,13 @@ int main(void)
   {
     
    HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFI);
-   HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
+   //HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
    PowerUpMode();
    ReceiveMode();
    if (GetDoorSensorState())sprintf(str, "iam%c%cdoor\n",ADDR,DEV_TYPE );
    if (GetButtonState())sprintf(str, "iam%c%cbutton\n",ADDR,DEV_TYPE );
    if (timeout_flag) {
-     sprintf(str, "iam%c%cnbat                        \n",ADDR,DEV_TYPE );
+     sprintf(str, "iam%c%cnbt                        \n",ADDR,DEV_TYPE );
      timeout_flag =0;
    }
    TransmitMultiPacket(str, 32);
@@ -156,6 +156,7 @@ int main(void)
    SetTimer(300);
    while(GetTimer()>0){
      if (GetDataFromAir(rx_data))        {
+       HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
     
    
        if (rx_data[0]==ADDR)      {
