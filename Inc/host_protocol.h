@@ -3,6 +3,6 @@
 
 
 #define ADDR 0x05
-#define DEV_TYPE 0x01
+#define DEV_TYPE 0x02
 void HostCommandParcer (char *packet, char *str);
 #endif

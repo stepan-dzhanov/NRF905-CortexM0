@@ -145,10 +145,10 @@ int main(void)
    HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
    PowerUpMode();
    ReceiveMode();
-   if (GetDoorSensorState())sprintf(str, "iam%cdoor\n",ADDR);
-   if (GetButtonState())sprintf(str, "iam%cbutton\n",ADDR);
+   if (GetDoorSensorState())sprintf(str, "iam%c%cdoor\n",ADDR,DEV_TYPE );
+   if (GetButtonState())sprintf(str, "iam%c%cbutton\n",ADDR,DEV_TYPE );
    if (timeout_flag) {
-     sprintf(str, "iam%cnbat                        \n",ADDR);
+     sprintf(str, "iam%c%cnbat                        \n",ADDR,DEV_TYPE );
      timeout_flag =0;
    }
    TransmitMultiPacket(str, 32);
