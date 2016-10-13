@@ -31,6 +31,7 @@
   ******************************************************************************
   */
 /* Includes ------------------------------------------------------------------*/
+#include "main.h"
 #include "stm32f0xx_hal.h"
 
 /* USER CODE BEGIN Includes */
@@ -42,7 +43,7 @@
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
-COMP_HandleTypeDef hcomp1;
+ADC_HandleTypeDef hadc;
 
 RTC_HandleTypeDef hrtc;
 
@@ -61,18 +62,17 @@ UART_HandleTypeDef huart2;
 void SystemClock_Config(void);
 void Error_Handler(void);
 static void MX_GPIO_Init(void);
-static void MX_COMP1_Init(void);
 static void MX_RTC_Init(void);
 static void MX_SPI1_Init(void);
 static void MX_TIM3_Init(void);
 static void MX_USART2_UART_Init(void);
+static void MX_ADC_Init(void);
 
 void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
-
-char timeout_flag=0;
-
+                                
 
 /* USER CODE BEGIN PFP */
+char timeout_flag=0;
 /* Private function prototypes -----------------------------------------------*/
 
 /* USER CODE END PFP */
@@ -89,6 +89,8 @@ int main(void)
    char str[64];
    char rx_data[64];
    char i=0x30;
+   unsigned char bat_state =0;
+   unsigned int ex_voltage;
 
   /* USER CODE END 1 */
 
@@ -102,11 +104,11 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
- // MX_COMP1_Init();
   MX_RTC_Init();
   MX_SPI1_Init();
- // MX_TIM3_Init();
- // MX_USART2_UART_Init();
+  MX_TIM3_Init();
+  MX_USART2_UART_Init();
+  MX_ADC_Init();
 
   /* USER CODE BEGIN 2 */
 
@@ -119,6 +121,7 @@ int main(void)
 
  
    Nrf905Init(0x6C);
+   sprintf(str, "iam%c%cnbt                        \n",ADDR,DEV_TYPE );
     TransmitMultiPacket(str,32);
   // PowerDownMode();
    
@@ -142,13 +145,20 @@ int main(void)
   {
     
    HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFI);
-   //HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
+   HAL_GPIO_WritePin( OFF_2_5V_GPIO_Port, OFF_2_5V_Pin, GPIO_PIN_RESET);
+   HAL_GPIO_WritePin( PB2_GPIO_Port, PB2_Pin, GPIO_PIN_SET);
+  
+   bat_state = GetBatteryStatus();
+
+   HAL_GPIO_WritePin( OFF_2_5V_GPIO_Port, OFF_2_5V_Pin, GPIO_PIN_SET);
+   HAL_GPIO_WritePin( PB2_GPIO_Port, PB2_Pin, GPIO_PIN_RESET);
+   
    PowerUpMode();
    ReceiveMode();
    if (GetDoorSensorState())sprintf(str, "iam%c%cdoor\n",ADDR,DEV_TYPE );
    if (GetButtonState())sprintf(str, "iam%c%cbutton\n",ADDR,DEV_TYPE );
    if (timeout_flag) {
-     sprintf(str, "iam%c%cnbt                        \n",ADDR,DEV_TYPE );
+     sprintf(str, "iam%c%c%cbt                        \n",ADDR,DEV_TYPE, bat_state );
      timeout_flag =0;
    }
    TransmitMultiPacket(str, 32);
@@ -175,6 +185,8 @@ int main(void)
    PowerDownMode();
    MX_RTC_Init();
    HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET); 
+ //  SetTimer(10000);
+  // while(GetTimer()>0);
     
     
     
@@ -198,8 +210,14 @@ void SystemClock_Config(void)
   RCC_ClkInitTypeDef RCC_ClkInitStruct;
   RCC_PeriphCLKInitTypeDef PeriphClkInit;
 
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_LSI|RCC_OSCILLATORTYPE_HSE;
+    /**Initializes the CPU, AHB and APB busses clocks 
+    */
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI14|RCC_OSCILLATORTYPE_LSI
+                              |RCC_OSCILLATORTYPE_HSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+  RCC_OscInitStruct.HSI14State = RCC_HSI14_ON;
+  RCC_OscInitStruct.HSI14CalibrationValue = 16;
   RCC_OscInitStruct.LSIState = RCC_LSI_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
@@ -210,11 +228,14 @@ void SystemClock_Config(void)
     Error_Handler();
   }
 
+    /**Initializes the CPU, AHB and APB busses clocks 
+    */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
   {
     Error_Handler();
@@ -227,31 +248,61 @@ void SystemClock_Config(void)
     Error_Handler();
   }
 
+    /**Configure the Systick interrupt time 
+    */
   HAL_SYSTICK_Config(HAL_RCC_GetHCLKFreq()/1000);
 
+    /**Configure the Systick 
+    */
   HAL_SYSTICK_CLKSourceConfig(SYSTICK_CLKSOURCE_HCLK);
 
   /* SysTick_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(SysTick_IRQn, 0, 0);
 }
 
-/* COMP1 init function */
-static void MX_COMP1_Init(void)
+/* ADC init function */
+static void MX_ADC_Init(void)
 {
 
-  hcomp1.Instance = COMP1;
-  hcomp1.Init.InvertingInput = COMP_INVERTINGINPUT_1_2VREFINT;
-  hcomp1.Init.NonInvertingInput = COMP_NONINVERTINGINPUT_IO1;
-  hcomp1.Init.Output = COMP_OUTPUT_NONE;
-  hcomp1.Init.OutputPol = COMP_OUTPUTPOL_NONINVERTED;
-  hcomp1.Init.Hysteresis = COMP_HYSTERESIS_NONE;
-  hcomp1.Init.Mode = COMP_MODE_HIGHSPEED;
-  hcomp1.Init.WindowMode = COMP_WINDOWMODE_DISABLE;
-  hcomp1.Init.TriggerMode = COMP_TRIGGERMODE_NONE;
-  if (HAL_COMP_Init(&hcomp1) != HAL_OK)
+  ADC_ChannelConfTypeDef sConfig;
+
+    /**Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion) 
+    */
+  hadc.Instance = ADC1;
+  hadc.Init.ClockPrescaler = ADC_CLOCK_ASYNC_DIV1;
+  hadc.Init.Resolution = ADC_RESOLUTION_8B;
+  hadc.Init.DataAlign = ADC_DATAALIGN_RIGHT;
+  hadc.Init.ScanConvMode = ADC_SCAN_DIRECTION_FORWARD;
+  hadc.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
+  hadc.Init.LowPowerAutoWait = DISABLE;
+  hadc.Init.LowPowerAutoPowerOff = DISABLE;
+  hadc.Init.ContinuousConvMode = DISABLE;
+  hadc.Init.DiscontinuousConvMode = DISABLE;
+  hadc.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
+  hadc.Init.DMAContinuousRequests = DISABLE;
+  hadc.Init.Overrun = ADC_OVR_DATA_PRESERVED;
+  if (HAL_ADC_Init(&hadc) != HAL_OK)
   {
     Error_Handler();
   }
+
+    /**Configure for the selected ADC regular channel to be converted. 
+    */
+  sConfig.Channel = ADC_CHANNEL_0;
+  sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;
+  sConfig.SamplingTime = ADC_SAMPLETIME_55CYCLES_5;
+ // if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
+  //{
+  //  Error_Handler();
+ // }
+
+    /**Configure for the selected ADC regular channel to be converted. 
+    */
+ // sConfig.Channel = ADC_CHANNEL_1;
+ // if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
+ // {
+ //   Error_Handler();
+ // }
 
 }
 
@@ -263,7 +314,7 @@ static void MX_RTC_Init(void)
   RTC_DateTypeDef sDate;
   RTC_AlarmTypeDef sAlarm;
 
-    /**Initialize RTC and set the Time and Date 
+    /**Initialize RTC Only 
     */
   hrtc.Instance = RTC;
   hrtc.Init.HourFormat = RTC_HOURFORMAT_24;
@@ -277,6 +328,8 @@ static void MX_RTC_Init(void)
     Error_Handler();
   }
 
+    /**Initialize RTC and set the Time and Date 
+    */
   sTime.Hours = 0x0;
   sTime.Minutes = 0x0;
   sTime.Seconds = 0x0;
@@ -300,15 +353,15 @@ static void MX_RTC_Init(void)
     /**Enable the Alarm A 
     */
   sAlarm.AlarmTime.Hours = 0x0;
-  sAlarm.AlarmTime.Minutes = 0x0;
-  sAlarm.AlarmTime.Seconds = 0x59;
+  sAlarm.AlarmTime.Minutes = 0x01;
+  sAlarm.AlarmTime.Seconds = 0x13;
   sAlarm.AlarmTime.SubSeconds = 0x0;
   sAlarm.AlarmTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
   sAlarm.AlarmTime.StoreOperation = RTC_STOREOPERATION_RESET;
   sAlarm.AlarmMask = RTC_ALARMMASK_DATEWEEKDAY;
   sAlarm.AlarmSubSecondMask = RTC_ALARMSUBSECONDMASK_ALL;
   sAlarm.AlarmDateWeekDaySel = RTC_ALARMDATEWEEKDAYSEL_DATE;
-  sAlarm.AlarmDateWeekDay = 1;
+  sAlarm.AlarmDateWeekDay = 0x1;
   sAlarm.Alarm = RTC_ALARM_A;
   if (HAL_RTC_SetAlarm_IT(&hrtc, &sAlarm, RTC_FORMAT_BCD) != HAL_OK)
   {
@@ -429,17 +482,13 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(Button_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : LED_Pin CH1_Pin CH2_Pin */
-  GPIO_InitStruct.Pin = LED_Pin|CH1_Pin|CH2_Pin;
+  /*Configure GPIO pins : LED_Pin PB2_Pin CH1_Pin CH2_Pin 
+                           OFF_2_5V_Pin */
+  GPIO_InitStruct.Pin = LED_Pin|PB2_Pin|CH1_Pin|CH2_Pin 
+                          |OFF_2_5V_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : PB2 */
-  GPIO_InitStruct.Pin = GPIO_PIN_2;
-  GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /*Configure GPIO pin : TEMP_PWM_Pin */
@@ -462,7 +511,8 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, LED_Pin|CH1_Pin|CH2_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, LED_Pin|PB2_Pin|CH1_Pin|CH2_Pin 
+                          |OFF_2_5V_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOA, TX_EN_Pin|PWRUP_Pin|TX_CE_Pin|CS_Pin, GPIO_PIN_RESET);

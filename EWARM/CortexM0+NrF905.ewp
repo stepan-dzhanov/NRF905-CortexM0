@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-
+<?xml version="1.0" encoding="UTF-8"?>
 <project>
   <fileVersion>2</fileVersion>
   <configuration>
@@ -213,19 +212,19 @@
         </option>
         <option>
           <name>CCDiagSuppress</name>
-          <state></state>
+          <state />
         </option>
         <option>
           <name>CCDiagRemark</name>
-          <state></state>
+          <state />
         </option>
         <option>
           <name>CCDiagWarning</name>
-          <state></state>
+          <state />
         </option>
         <option>
           <name>CCDiagError</name>
-          <state></state>
+          <state />
         </option>
         <option>
           <name>CCObjPrefix</name>
@@ -254,7 +253,7 @@
         </option>
         <option>
           <name>IExtraOptions</name>
-          <state></state>
+          <state />
         </option>
         <option>
           <name>CCLangConformance</name>
@@ -294,7 +293,7 @@
         </option>
         <option>
           <name>PreInclude</name>
-          <state></state>
+          <state />
         </option>
         <option>
           <name>CompilerMisraOverride</name>
@@ -448,15 +447,15 @@
         </option>
         <option>
           <name>AWarnOne</name>
-          <state></state>
+          <state />
         </option>
         <option>
           <name>AWarnRange1</name>
-          <state></state>
+          <state />
         </option>
         <option>
           <name>AWarnRange2</name>
-          <state></state>
+          <state />
         </option>
         <option>
           <name>ADebug</name>
@@ -468,7 +467,7 @@
         </option>
         <option>
           <name>ADefines</name>
-          <state></state>
+          <state />
         </option>
         <option>
           <name>AList</name>
@@ -564,7 +563,7 @@
         </option>
         <option>
           <name>AUserIncludes</name>
-          <state></state>
+          <state />
         </option>
         <option>
           <name>AExtraOptionsCheckV2</name>
@@ -572,7 +571,7 @@
         </option>
         <option>
           <name>AExtraOptionsV2</name>
-          <state></state>
+          <state />
         </option>
         <option>
           <name>AsmNoLiteralPool</name>
@@ -614,22 +613,22 @@
       <name>CUSTOM</name>
       <archiveVersion>3</archiveVersion>
       <data>
-        <extensions></extensions>
-        <cmdline></cmdline>
+        <extensions />
+        <cmdline />
         <hasPrio>0</hasPrio>
       </data>
     </settings>
     <settings>
       <name>BICOMP</name>
       <archiveVersion>0</archiveVersion>
-      <data/>
+      <data />
     </settings>
     <settings>
       <name>BUILDACTION</name>
       <archiveVersion>1</archiveVersion>
       <data>
-        <prebuild></prebuild>
-        <postbuild></postbuild>
+        <prebuild />
+        <postbuild />
       </data>
     </settings>
     <settings>
@@ -661,31 +660,31 @@
         </option>
         <option>
           <name>IlinkKeepSymbols</name>
-          <state></state>
+          <state />
         </option>
         <option>
           <name>IlinkRawBinaryFile</name>
-          <state></state>
+          <state />
         </option>
         <option>
           <name>IlinkRawBinarySymbol</name>
-          <state></state>
+          <state />
         </option>
         <option>
           <name>IlinkRawBinarySegment</name>
-          <state></state>
+          <state />
         </option>
         <option>
           <name>IlinkRawBinaryAlign</name>
-          <state></state>
+          <state />
         </option>
         <option>
           <name>IlinkDefines</name>
-          <state></state>
+          <state />
         </option>
         <option>
           <name>IlinkConfigDefines</name>
-          <state></state>
+          <state />
         </option>
         <option>
           <name>IlinkMapFile</name>
@@ -721,7 +720,7 @@
         </option>
         <option>
           <name>IlinkIcfFileSlave</name>
-          <state></state>
+          <state />
         </option>
         <option>
           <name>IlinkEnableRemarks</name>
@@ -729,19 +728,19 @@
         </option>
         <option>
           <name>IlinkSuppressDiags</name>
-          <state></state>
+          <state />
         </option>
         <option>
           <name>IlinkTreatAsRem</name>
-          <state></state>
+          <state />
         </option>
         <option>
           <name>IlinkTreatAsWarn</name>
-          <state></state>
+          <state />
         </option>
         <option>
           <name>IlinkTreatAsErr</name>
-          <state></state>
+          <state />
         </option>
         <option>
           <name>IlinkWarningsAreErrors</name>
@@ -753,7 +752,7 @@
         </option>
         <option>
           <name>IlinkExtraOptions</name>
-          <state></state>
+          <state />
         </option>
         <option>
           <name>IlinkLowLevelInterfaceSlave</name>
@@ -765,7 +764,7 @@
         </option>
         <option>
           <name>IlinkAdditionalLibs</name>
-          <state></state>
+          <state />
         </option>
         <option>
           <name>IlinkOverrideProgramEntryLabel</name>
@@ -900,11 +899,11 @@
         </option>
         <option>
           <name>IlinkStackControlFile</name>
-          <state></state>
+          <state />
         </option>
         <option>
           <name>IlinkStackCallGraphFile</name>
-          <state></state>
+          <state />
         </option>
         <option>
           <name>CrcAlgorithm</name>
@@ -931,7 +930,7 @@
         <debug>1</debug>
         <option>
           <name>IarchiveInputs</name>
-          <state></state>
+          <state />
         </option>
         <option>
           <name>IarchiveOverride</name>
@@ -946,7 +945,7 @@
     <settings>
       <name>BILINK</name>
       <archiveVersion>0</archiveVersion>
-      <data/>
+      <data />
     </settings>
   </configuration>
   <group>
@@ -954,11 +953,14 @@
     <group>
       <name>EWARM</name>
       <file>
-        <name>$PROJ_DIR$\..\Drivers\CMSIS\Device\ST\STM32F0xx\Source\Templates\iar\startup_stm32f051x8.s</name>
+        <name>$PROJ_DIR$/../Drivers/CMSIS/Device/ST/STM32F0xx/Source/Templates/iar/startup_stm32f051x8.s</name>
       </file>
     </group>
     <group>
       <name>User</name>
+      <file>
+        <name>$PROJ_DIR$\..\Src\adc.c</name>
+      </file>
       <file>
         <name>$PROJ_DIR$\..\Src\ext_irq.c</name>
       </file>
@@ -1002,7 +1004,10 @@
         <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_comp.c</name>
+        <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_adc.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_adc_ex.c</name>
       </file>
       <file>
         <name>$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_cortex.c</name>
@@ -1064,5 +1069,3 @@
     </group>
   </group>
 </project>
-
-

@@ -38,7 +38,6 @@ extern void Error_Handler(void);
 /* USER CODE BEGIN 0 */
 
 /* USER CODE END 0 */
-
 /**
   * Initializes the Global MSP.
   */
@@ -63,49 +62,55 @@ void HAL_MspInit(void)
   /* USER CODE END MspInit 1 */
 }
 
-void HAL_COMP_MspInit(COMP_HandleTypeDef* hcomp)
+void HAL_ADC_MspInit(ADC_HandleTypeDef* hadc)
 {
 
   GPIO_InitTypeDef GPIO_InitStruct;
-  if(hcomp->Instance==COMP1)
+  if(hadc->Instance==ADC1)
   {
-  /* USER CODE BEGIN COMP1_MspInit 0 */
+  /* USER CODE BEGIN ADC1_MspInit 0 */
 
-  /* USER CODE END COMP1_MspInit 0 */
+  /* USER CODE END ADC1_MspInit 0 */
+    /* Peripheral clock enable */
+    __HAL_RCC_ADC1_CLK_ENABLE();
   
-    /**COMP1 GPIO Configuration    
-    PA1     ------> COMP1_INP 
+    /**ADC GPIO Configuration    
+    PA0     ------> ADC_IN0
+    PA1     ------> ADC_IN1 
     */
-    GPIO_InitStruct.Pin = GPIO_PIN_1;
+    GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1;
     GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /* USER CODE BEGIN COMP1_MspInit 1 */
+  /* USER CODE BEGIN ADC1_MspInit 1 */
 
-  /* USER CODE END COMP1_MspInit 1 */
+  /* USER CODE END ADC1_MspInit 1 */
   }
 
 }
 
-void HAL_COMP_MspDeInit(COMP_HandleTypeDef* hcomp)
+void HAL_ADC_MspDeInit(ADC_HandleTypeDef* hadc)
 {
 
-  if(hcomp->Instance==COMP1)
+  if(hadc->Instance==ADC1)
   {
-  /* USER CODE BEGIN COMP1_MspDeInit 0 */
+  /* USER CODE BEGIN ADC1_MspDeInit 0 */
 
-  /* USER CODE END COMP1_MspDeInit 0 */
+  /* USER CODE END ADC1_MspDeInit 0 */
+    /* Peripheral clock disable */
+    __HAL_RCC_ADC1_CLK_DISABLE();
   
-    /**COMP1 GPIO Configuration    
-    PA1     ------> COMP1_INP 
+    /**ADC GPIO Configuration    
+    PA0     ------> ADC_IN0
+    PA1     ------> ADC_IN1 
     */
-    HAL_GPIO_DeInit(GPIOA, GPIO_PIN_1);
+    HAL_GPIO_DeInit(GPIOA, GPIO_PIN_0|GPIO_PIN_1);
 
   }
-  /* USER CODE BEGIN COMP1_MspDeInit 1 */
+  /* USER CODE BEGIN ADC1_MspDeInit 1 */
 
-  /* USER CODE END COMP1_MspDeInit 1 */
+  /* USER CODE END ADC1_MspDeInit 1 */
 
 }
 
