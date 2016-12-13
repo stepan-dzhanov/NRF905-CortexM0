@@ -10,8 +10,8 @@ unsigned char GetBatteryStatus(){
   unsigned char result;
   
   ADC_ChannelConfTypeDef sConfig;
-  sConfig.Channel = ADC_CHANNEL_0;
-  sConfig.Rank = 0 ;
+  sConfig.Channel = ADC_CHANNEL_1;
+  sConfig.Rank = 1 ;
   sConfig.SamplingTime = ADC_SAMPLETIME_239CYCLES_5;
   HAL_ADC_ConfigChannel(&hadc, &sConfig);
   

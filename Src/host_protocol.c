@@ -2,7 +2,11 @@
 #include <string.h>
 #include "timer.h"
 #include "host_protocol.h"
-#define MAX_COMMAND_HOST  7
+#include "cooking.h"
+
+//#define __DBG__
+char db =0;
+#define MAX_COMMAND_HOST  8
 
 const char * hstrings[16] = {
 "tst",
@@ -12,10 +16,22 @@ const char * hstrings[16] = {
 "ch2on",
 "ch2off",
 "pwm",
+"scp",
 };
 
+unsigned int  StrToInt ( char *pData)  {
+  unsigned int result;
+  result = (pData[0]&0x0f)*100 +(pData[1]&0x0f)*10+ (pData[2]&0x0F);
+  return result;
+}
+
+
+
 void HostCommandParcer (char *packet, char *str){
-   char i=0;
+  unsigned int temperature[3];
+  unsigned int time[3];
+
+  char i=0;
    for( i=0; i<(MAX_COMMAND_HOST);i++)  {
     if(!memcmp(packet,hstrings[i],strlen(hstrings[i]))) break;
       
@@ -25,7 +41,11 @@ void HostCommandParcer (char *packet, char *str){
       return;
    }
    
-   
+#ifdef __DBG__
+
+   if (db==0) i = 7;
+   db =1;
+#endif
   
     switch (i){
     case 0:
@@ -55,6 +75,21 @@ void HostCommandParcer (char *packet, char *str){
       HAL_GPIO_WritePin( CH2_GPIO_Port, CH2_Pin, GPIO_PIN_RESET);
       break;
      case 6:                                // pwm
+      sprintf(str,"OK%c                            \n", ADDR);
+      ;
+      break;
+     case 7:                                // scp
+      temperature[0] = StrToInt(packet+3);
+      time[0] = (StrToInt(packet+6))*60;
+      temperature[1] = StrToInt(packet+9);
+      time[1] = (StrToInt(packet+12))*60;
+#ifdef __DBG__
+ temperature[0]= 100;
+ temperature[1]= 100;
+ time[0] = 60;
+ time[1] = 60;
+#endif 
+      InitCoock(temperature, time,2);
       sprintf(str,"OK%c                            \n", ADDR);
       ;
       break;

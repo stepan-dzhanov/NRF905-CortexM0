@@ -1064,6 +1064,9 @@
         <name>$PROJ_DIR$\..\Src\adc.c</name>
       </file>
       <file>
+        <name>$PROJ_DIR$\..\Src\cooking.c</name>
+      </file>
+      <file>
         <name>$PROJ_DIR$\..\Src\ext_irq.c</name>
       </file>
       <file>

@@ -40,6 +40,7 @@
 #include "ext_irq.h"
 #include "timer.h"
 #include "host_protocol.h"
+#include "cooking.h"
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -91,6 +92,7 @@ int main(void)
    char i=0x30;
    unsigned char bat_state =0;
    unsigned int ex_voltage;
+   char cook_status, hst;
 
   /* USER CODE END 1 */
 
@@ -104,7 +106,7 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_RTC_Init();
+ // MX_RTC_Init();
   MX_SPI1_Init();
   MX_TIM3_Init();
   MX_USART2_UART_Init();
@@ -144,11 +146,13 @@ int main(void)
   while (1)
   {
     
-   HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFI);
+   //HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFI);
    HAL_GPIO_WritePin( OFF_2_5V_GPIO_Port, OFF_2_5V_Pin, GPIO_PIN_RESET);
    HAL_GPIO_WritePin( PB2_GPIO_Port, PB2_Pin, GPIO_PIN_SET);
   
    bat_state = GetBatteryStatus();
+   cook_status = GetCookStatus();
+   hst = GetHeaterState();
 
    HAL_GPIO_WritePin( OFF_2_5V_GPIO_Port, OFF_2_5V_Pin, GPIO_PIN_SET);
    HAL_GPIO_WritePin( PB2_GPIO_Port, PB2_Pin, GPIO_PIN_RESET);
@@ -158,12 +162,13 @@ int main(void)
    if (GetDoorSensorState())sprintf(str, "iam%c%cdoor\n",ADDR,DEV_TYPE );
    if (GetButtonState())sprintf(str, "iam%c%cbutton\n",ADDR,DEV_TYPE );
    if (timeout_flag) {
-     sprintf(str, "iam%c%c%cbt                        \n",ADDR,DEV_TYPE, bat_state );
+     sprintf(str, "iam%c%c%cbt                        \n",ADDR,DEV_TYPE, bat_state);
      timeout_flag =0;
    }
+    sprintf(str, "iam%c%c%c%c%ct                       \n",ADDR,DEV_TYPE, bat_state, cook_status,hst);
    TransmitMultiPacket(str, 32);
    ReceiveMode();
-   SetTimer(300);
+   SetTimer(800);
    while(GetTimer()>0){
      if (GetDataFromAir(rx_data))        {
        HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
@@ -183,10 +188,15 @@ int main(void)
    
    ReceiveMode();
    PowerDownMode();
-   MX_RTC_Init();
    HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET); 
- //  SetTimer(10000);
-  // while(GetTimer()>0);
+  // MX_RTC_Init();
+  
+   //HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFI);
+   //SystemClock_Config();
+   SetTimer(30000);
+   while(GetTimer()>0)  {
+     CoockScripts();
+   }
     
     
     
@@ -288,9 +298,9 @@ static void MX_ADC_Init(void)
 
     /**Configure for the selected ADC regular channel to be converted. 
     */
-  sConfig.Channel = ADC_CHANNEL_0;
-  sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;
-  sConfig.SamplingTime = ADC_SAMPLETIME_55CYCLES_5;
+//  sConfig.Channel = ADC_CHANNEL_0;
+ // sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;
+ // sConfig.SamplingTime = ADC_SAMPLETIME_55CYCLES_5;
  // if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
   //{
   //  Error_Handler();
@@ -353,8 +363,8 @@ static void MX_RTC_Init(void)
     /**Enable the Alarm A 
     */
   sAlarm.AlarmTime.Hours = 0x0;
-  sAlarm.AlarmTime.Minutes = 0x01;
-  sAlarm.AlarmTime.Seconds = 0x13;
+  sAlarm.AlarmTime.Minutes = 0x00;
+  sAlarm.AlarmTime.Seconds = 0x01;
   sAlarm.AlarmTime.SubSeconds = 0x0;
   sAlarm.AlarmTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
   sAlarm.AlarmTime.StoreOperation = RTC_STOREOPERATION_RESET;

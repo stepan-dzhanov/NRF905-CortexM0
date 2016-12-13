@@ -11,6 +11,6 @@
 void InitCoock(int *temperature_set, int *time_set, int steps_set);
 int CoockScripts();
 int  Termostat(int a);
-
+char GetHeaterState();
 int GetCookStatus();
 #endif
