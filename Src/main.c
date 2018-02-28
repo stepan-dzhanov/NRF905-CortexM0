@@ -145,12 +145,12 @@ int main(void)
   {
     
    HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFI);
-   HAL_GPIO_WritePin( OFF_2_5V_GPIO_Port, OFF_2_5V_Pin, GPIO_PIN_RESET);
+ //  HAL_GPIO_WritePin( OFF_2_5V_GPIO_Port, OFF_2_5V_Pin, GPIO_PIN_RESET);
    HAL_GPIO_WritePin( PB2_GPIO_Port, PB2_Pin, GPIO_PIN_SET);
   
    bat_state = GetBatteryStatus();
 
-   HAL_GPIO_WritePin( OFF_2_5V_GPIO_Port, OFF_2_5V_Pin, GPIO_PIN_SET);
+  // HAL_GPIO_WritePin( OFF_2_5V_GPIO_Port, OFF_2_5V_Pin, GPIO_PIN_SET);
    HAL_GPIO_WritePin( PB2_GPIO_Port, PB2_Pin, GPIO_PIN_RESET);
    
    PowerUpMode();
@@ -484,8 +484,8 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pins : LED_Pin PB2_Pin CH1_Pin CH2_Pin 
                            OFF_2_5V_Pin */
-  GPIO_InitStruct.Pin = LED_Pin|PB2_Pin|CH1_Pin|CH2_Pin 
-                          |OFF_2_5V_Pin;
+  GPIO_InitStruct.Pin = LED_Pin|PB2_Pin|CH1_Pin|CH2_Pin; 
+                         // |OFF_2_5V_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
