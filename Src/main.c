@@ -159,6 +159,12 @@ int main(void)
    
     if (GetDataFromAir(rx_data)) {
       HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
+      sprintf(str, "%ctst\n\r",0x06);
+      SetTimer(50);
+      while(GetTimer()>0);
+      
+      TransmitMultiPacket(str, 32);
+      HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
     }
    
    /*if (GetDoorSensorState())sprintf(str, "iam%c%cdoor\n",ADDR,DEV_TYPE );
