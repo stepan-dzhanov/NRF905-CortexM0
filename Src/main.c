@@ -147,7 +147,7 @@ int main(void)
    HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFI);
  //  HAL_GPIO_WritePin( OFF_2_5V_GPIO_Port, OFF_2_5V_Pin, GPIO_PIN_RESET);
    HAL_GPIO_WritePin( PB2_GPIO_Port, PB2_Pin, GPIO_PIN_SET);
-  
+   for (int i=0; i<0xFFFFF; i++);                          // delay for stable level
    bat_state = GetBatteryStatus();
 
   // HAL_GPIO_WritePin( OFF_2_5V_GPIO_Port, OFF_2_5V_Pin, GPIO_PIN_SET);
