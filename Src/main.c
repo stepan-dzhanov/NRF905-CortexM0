@@ -162,8 +162,8 @@ int main(void)
       sprintf(str, "%ctst\n\r",0x06);
       SetTimer(50);
       while(GetTimer()>0);
-      
-      TransmitMultiPacket(str, 32);
+      HAL_UART_Transmit(&huart2,rx_data, strlen(rx_data), 1000);
+    //  TransmitMultiPacket(str, 32);
       HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
     }
    
@@ -467,6 +467,7 @@ static void MX_USART2_UART_Init(void)
   {
     Error_Handler();
   }
+  __HAL_UART_ENABLE_IT(&huart2, UART_IT_RXNE);
 
 }
 
