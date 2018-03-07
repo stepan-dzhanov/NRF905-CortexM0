@@ -88,6 +88,7 @@ int main(void)
    volatile char rc,a;
    char str[64];
    char rx_data[64];
+   char host_data[64];
    char i=0x30;
    unsigned char bat_state =0;
    unsigned int ex_voltage;
@@ -116,94 +117,37 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  for (int i=0; i<0xFFFFFF; i++);
+
   
 
  
    Nrf905Init(0x6C);
-     PowerUpMode();
+   PowerUpMode();
    ReceiveMode();
-  // sprintf(str, "iam%c%cnbt                        \n",ADDR,DEV_TYPE );
-  //  TransmitMultiPacket(str,32);
-  // PowerDownMode();
-   
-  // HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFI);
- //  HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
- // PowerUpMode();
- //  ReceiveMode();
-   //while (1);
- // sprintf(str,"qwertyuiopasdfghjklzxcvbnmqwerty");
- // TransmitMultiPacket(str,32);
-  //HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
-  //while(1) {
-   // for (int i=0; i<0xFFFFFF; i++);
-   // TransmitMultiPacket(str, 32);
-  //}
- //  PowerDownMode();
-   
-   //HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
+ 
    
   while (1)
   {
     
-  // HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFI);
- //  HAL_GPIO_WritePin( OFF_2_5V_GPIO_Port, OFF_2_5V_Pin, GPIO_PIN_RESET);
-  // HAL_GPIO_WritePin( PB2_GPIO_Port, PB2_Pin, GPIO_PIN_SET);
-  
-  // bat_state = GetBatteryStatus();
-
-  // HAL_GPIO_WritePin( OFF_2_5V_GPIO_Port, OFF_2_5V_Pin, GPIO_PIN_SET);
-  // HAL_GPIO_WritePin( PB2_GPIO_Port, PB2_Pin, GPIO_PIN_RESET);
-  
+ 
    
    
     if (GetDataFromAir(rx_data)) {
       HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
-      sprintf(str, "%ctst\n\r",0x06);
-      SetTimer(50);
-      while(GetTimer()>0);
-      HAL_UART_Transmit(&huart2,rx_data, strlen(rx_data), 1000);
-    //  TransmitMultiPacket(str, 32);
+      rx_data[32] = 0x0A;
+      rx_data[33] = 0x0D;
+      HAL_UART_Transmit(&huart2,rx_data,34, 1000);
+      SetTimer(200);
+      while(GetTimer()>0){
+        if (GetDataFromHost(host_data) ){
+          TransmitMultiPacket(host_data, 32);
+          ClearDataFromHost();
+        }
+      }
       HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
     }
    
-   /*if (GetDoorSensorState())sprintf(str, "iam%c%cdoor\n",ADDR,DEV_TYPE );
-   if (GetButtonState())sprintf(str, "iam%c%cbutton\n",ADDR,DEV_TYPE );
-   if (timeout_flag) {
-     sprintf(str, "iam%c%c%cbt                        \n",ADDR,DEV_TYPE, bat_state );
-     timeout_flag =0;
-   }
-   TransmitMultiPacket(str, 32);
-   HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
-   SetTimer(300);
-   while(GetTimer()>0);
-   HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET); 
-   
-   ReceiveMode();
-   SetTimer(300);
-   while(GetTimer()>0){
-     if (GetDataFromAir(rx_data))        {
-      // HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
-    
-   
-       if (rx_data[0]==ADDR)      {
-       
-         HostCommandParcer (&rx_data[1],str);
-         TransmitMultiPacket(str, 32);
-      
-       
-       }
-       ClearDataFromHost();
-       break;
-     }
-   }
-   
-   ReceiveMode();
-   PowerDownMode();
-   MX_RTC_Init();*/
-  // HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET); 
- //  SetTimer(10000);
-  // while(GetTimer()>0);
+  
     
     
     
