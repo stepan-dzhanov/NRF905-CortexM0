@@ -1,6 +1,7 @@
 #include "stm32f0xx_hal.h"
 #include "rf_protocol.h"
 #include "nrf905_driver.h"
+#include "main.h"
 
 static char ptr=0;
 static char rx_buff[64];

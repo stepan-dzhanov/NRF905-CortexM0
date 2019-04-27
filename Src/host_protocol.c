@@ -2,6 +2,7 @@
 #include <string.h>
 #include "timer.h"
 #include "host_protocol.h"
+#include "main.h"
 #define MAX_COMMAND_HOST  7
 
 const char * hstrings[16] = {

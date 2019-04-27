@@ -3,7 +3,7 @@
 #include "ext_irq.h"
 #include "rf_protocol.h"
 #include "nrf905_driver.h"
-
+#include "main.h"
 static char state =0;
 static char bstate =0;
 

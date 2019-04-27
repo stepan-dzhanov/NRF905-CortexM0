@@ -10,6 +10,7 @@
 */
 #include "nrf905_driver.h"
 #include "stm32f0xx_hal.h"
+#include "main.h"
 
 
 #define NRF905_TXEN_LOW			        HAL_GPIO_WritePin( TX_EN_GPIO_Port, TX_EN_Pin, GPIO_PIN_RESET)

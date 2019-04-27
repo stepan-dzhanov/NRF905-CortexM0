@@ -4,7 +4,7 @@
 #include "gate_protocol.h"
 #include "nrf905_driver.h"
 #include <string.h>
-
+#include "main.h"
 extern UART_HandleTypeDef huart2;
 
 static unsigned char RxData[128];

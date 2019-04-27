@@ -1,6 +1,6 @@
 #include "stm32f0xx_hal.h"
 #include "adc.h"
-
+#include "main.h"
 extern ADC_HandleTypeDef hadc;
 
 unsigned char GetBatteryStatus(){
