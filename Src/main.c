@@ -158,7 +158,7 @@ int main(void)
    
    HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFI);
    SystemClock_Config();
- 
+   for (int i=0; i<0xFFFF; i++);
  //  HAL_GPIO_WritePin( OFF_2_5V_GPIO_Port, OFF_2_5V_Pin, GPIO_PIN_RESET);
    HAL_GPIO_WritePin( PB2_GPIO_Port, PB2_Pin, GPIO_PIN_SET);
    HAL_COMP_Start(&hcomp2);
@@ -189,13 +189,17 @@ int main(void)
  // for (int i=0; i<0xFFFFF; i++);                          // delay for stable level
   // bat_state = GetBatteryStatus();
 
-  // HAL_GPIO_WritePin( OFF_2_5V_GPIO_Port, OFF_2_5V_Pin, GPIO_PIN_SET);
+   //HAL_GPIO_WritePin( OFF_2_5V_GPIO_Port, OFF_2_5V_Pin, GPIO_PIN_SET);
    HAL_GPIO_WritePin( PB2_GPIO_Port, PB2_Pin, GPIO_PIN_RESET);
    
    PowerUpMode();
    ReceiveMode();
-   if (GetDoorSensorState())sprintf(str, "iam%c%cdoor\n",ADDR,DEV_TYPE );
-   if (GetButtonState())sprintf(str, "iam%c%cbutton\n",ADDR,DEV_TYPE );
+   if (GetDoorSensorState())    {
+     sprintf(str, "iam%c%cdoor\n",ADDR,DEV_TYPE );
+   }
+   if (GetButtonState())        {
+     sprintf(str, "iam%c%cbutton\n",ADDR,DEV_TYPE );
+   }
    float temperature = 0.0626*(float)comp_counter - 50.7;
    temp = (int)temperature;
    if (timeout_flag) {
