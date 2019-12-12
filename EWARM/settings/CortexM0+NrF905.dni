@@ -64,6 +64,17 @@ ShowTimeLog=1
 SumEnabled=0
 ShowTimeSum=1
 SumSortOrder=0
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[CallStackLog]
+Enabled=0
+[CallStackStripe]
+ShowTiming=1
 [Disassemble mode]
 mode=0
 [Breakpoints2]
@@ -84,17 +95,6 @@ Bp13=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..}.112.1" 0 0 1 "" 0 "" 0
 Bp14=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Src\main.c}.198.6" 0 0 1 "" 0 "" 0
 Bp15=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Src\main.c}.201.6" 0 0 1 "" 0 "" 0
 Count=16
-[Log file]
-LoggingEnabled=_ 0
-LogFile=_ ""
-Category=_ 0
-[TermIOLog]
-LoggingEnabled=_ 0
-LogFile=_ ""
 [Aliases]
 Count=0
 SuppressDialog=0
-[CallStackLog]
-Enabled=0
-[CallStackStripe]
-ShowTiming=1
