@@ -125,7 +125,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f0xx_hal.h"
-#include "ext_irq.h"
+
 /** @addtogroup STM32F0xx_HAL_Driver
   * @{
   */
@@ -507,11 +507,6 @@ void HAL_GPIO_EXTI_IRQHandler(uint16_t GPIO_Pin)
   }
 }
 
-/**
-  * @brief  EXTI line detection callback.
-  * @param  GPIO_Pin Specifies the port pin connected to corresponding EXTI line.
-  * @retval None
-  */
 
 
 /**

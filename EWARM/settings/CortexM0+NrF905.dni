@@ -9,10 +9,10 @@ TriggerName=main
 LimitSize=0
 ByteLimit=50
 [stlink]
-stlinkserialNo=2798FD0D
+stlinkserialNo=99F9E2D4
 stlinkfoundProbes=
 [DebugChecksum]
-Checksum=1341834427
+Checksum=-18240971
 [Exceptions]
 StopOnUncaught=_ 0
 StopOnThrow=_ 0
@@ -64,17 +64,6 @@ ShowTimeLog=1
 SumEnabled=0
 ShowTimeSum=1
 SumSortOrder=0
-[Log file]
-LoggingEnabled=_ 0
-LogFile=_ ""
-Category=_ 0
-[TermIOLog]
-LoggingEnabled=_ 0
-LogFile=_ ""
-[CallStackLog]
-Enabled=0
-[CallStackStripe]
-ShowTiming=1
 [Disassemble mode]
 mode=0
 [Breakpoints2]
@@ -82,19 +71,31 @@ Bp0=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_h
 Bp1=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\Src\adc.c}.40.3" 0 0 1 "" 0 "" 0
 Bp2=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\Src\cooking.c}.89.3" 0 0 1 "" 0 "" 0
 Bp3=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\Src\cooking.c}.124.9" 0 0 1 "" 0 "" 0
-Bp4=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..}.137.1" 0 0 1 "" 0 "" 0
-Bp5=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..}.23.1" 0 0 1 "" 0 "" 0
+Bp4=_ 0 "EMUL_CODE" "{D:\RF_Firmware\RF_Firmware\Sensor}.137.1" 0 0 1 "" 0 "" 0
+Bp5=_ 0 "EMUL_CODE" "{D:\RF_Firmware\RF_Firmware\Sensor}.23.1" 0 0 1 "" 0 "" 0
 Bp6=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..}.15.1" 0 0 1 "" 0 "" 0
-Bp7=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..}.126.1" 0 0 1 "" 0 "" 0
-Bp8=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..}.13.1" 0 0 1 "" 0 "" 0
-Bp9=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..}.13.1" 0 0 1 "" 0 "" 0
-Bp10=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..}.126.1" 0 0 1 "" 0 "" 0
+Bp7=_ 0 "EMUL_CODE" "{D:\RF_Firmware\RF_Firmware\Sensor}.126.1" 0 0 1 "" 0 "" 0
+Bp8=_ 0 "EMUL_CODE" "{D:\RF_Firmware\RF_Firmware\Sensor}.13.1" 0 0 1 "" 0 "" 0
+Bp9=_ 0 "EMUL_CODE" "{D:\RF_Firmware\RF_Firmware\Sensor}.13.1" 0 0 1 "" 0 "" 0
+Bp10=_ 0 "EMUL_CODE" "{D:\RF_Firmware\RF_Firmware\Sensor}.126.1" 0 0 1 "" 0 "" 0
 Bp11=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..}.112.1" 0 0 1 "" 0 "" 0
-Bp12=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..}.126.1" 0 0 1 "" 0 "" 0
-Bp13=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\..}.112.1" 0 0 1 "" 0 "" 0
-Bp14=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Src\main.c}.198.6" 0 0 1 "" 0 "" 0
-Bp15=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Src\main.c}.201.6" 0 0 1 "" 0 "" 0
+Bp12=_ 0 "EMUL_CODE" "{D:\RF_Firmware\RF_Firmware\Sensor}.126.1" 0 0 1 "" 0 "" 0
+Bp13=_ 0 "EMUL_CODE" "{D:\RF_Firmware\RF_Firmware\Sensor}.112.1" 0 0 1 "" 0 "" 0
+Bp14=_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_comp.c}.565.12" 0 0 1 "" 0 "" 0
+Bp15=_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Src\main.c}.182.4" 0 0 1 "" 0 "" 0
 Count=16
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
 [Aliases]
-Count=0
+A0=_ "D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\Src\main.c" "D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\Src\main.c"
+Count=1
 SuppressDialog=0
+[CallStackLog]
+Enabled=0
+[CallStackStripe]
+ShowTiming=1

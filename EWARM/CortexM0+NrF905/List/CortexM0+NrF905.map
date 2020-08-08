@@ -1,51 +1,51 @@
 ###############################################################################
 #
-# IAR ELF Linker V7.40.1.8447/W32 for ARM                 30/Apr/2019  21:25:58
+# IAR ELF Linker V7.40.1.8447/W32 for ARM                 08/Aug/2020  23:15:49
 # Copyright 2007-2015 IAR Systems AB.
 #
 #    Output file  =  
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Exe\CortexM0+NrF905.out
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Exe\CortexM0+NrF905.out
 #    Map file     =  
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905/List\CortexM0+NrF905.map
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905/List\CortexM0+NrF905.map
 #    Command line =  
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\ext_irq.o
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\gate_protocol.o
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\host_protocol.o
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\main.o
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\nrf905_driver.o
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\rf_protocol.o
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\startup_stm32f051x8.o
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal.o
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_comp.o
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_cortex.o
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_dma.o
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_flash.o
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_flash_ex.o
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_gpio.o
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_i2c.o
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_i2c_ex.o
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_msp.o
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_pwr.o
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_pwr_ex.o
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_rcc.o
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_rcc_ex.o
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_rtc.o
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_rtc_ex.o
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_spi.o
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_spi_ex.o
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_tim.o
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_tim_ex.o
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_uart.o
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_uart_ex.o
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_it.o
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\system_stm32f0xx.o
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\timer.o
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\ext_irq.o
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\gate_protocol.o
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\host_protocol.o
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\main.o
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\nrf905_driver.o
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\rf_protocol.o
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\startup_stm32f051x8.o
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal.o
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_comp.o
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_cortex.o
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_dma.o
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_flash.o
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_flash_ex.o
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_gpio.o
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_i2c.o
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_i2c_ex.o
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_msp.o
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_pwr.o
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_pwr_ex.o
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_rcc.o
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_rcc_ex.o
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_rtc.o
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_rtc_ex.o
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_spi.o
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_spi_ex.o
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_tim.o
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_tim_ex.o
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_uart.o
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_hal_uart_ex.o
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\stm32f0xx_it.o
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\system_stm32f0xx.o
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj\timer.o
 #        --redirect _Printf=_PrintfFull --redirect _Scanf=_ScanfFull -o
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Exe\CortexM0+NrF905.out
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Exe\CortexM0+NrF905.out
 #        --map
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905/List\CortexM0+NrF905.map
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905/List\CortexM0+NrF905.map
 #        --config
-#        D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM/stm32f051x8_flash.icf
+#        D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM/stm32f051x8_flash.icf
 #        --semihosting --entry __iar_program_start --vfe
 #
 ###############################################################################
@@ -74,7 +74,7 @@ __dlib_dynamic_initialization = normal
   .intvec             ro code  0x08000000    0xbc  startup_stm32f051x8.o [1]
                              - 0x080000bc    0xbc
 
-"P1":                                      0x5487
+"P1":                                      0x4cbd
   .text               ro code  0x080000bc  0x12ca  xprintffull.o [3]
   .text               ro code  0x08001386    0x1c  xmbtowc.o [3]
   .text               ro code  0x080013a2    0x14  strchr.o [5]
@@ -108,105 +108,83 @@ __dlib_dynamic_initialization = normal
   .text               ro code  0x08001e7a     0x2  startup_stm32f051x8.o [1]
   .text               ro code  0x08001e7c     0x2  IntDivZer.o [5]
   .text               ro code  0x08001e7e     0x2  xtls.o [3]
-  .text               ro code  0x08001e80   0x70c  stm32f0xx_hal_rcc.o [1]
-  .text               ro code  0x0800258c    0x5c  stm32f0xx_hal.o [1]
-  .text               ro code  0x080025e8   0x278  stm32f0xx_hal_msp.o [1]
-  .text               ro code  0x08002860   0x110  stm32f0xx_hal_cortex.o [1]
-  .text               ro code  0x08002970    0x34  ABImemset.o [5]
-  .text               ro code  0x080029a4   0x23c  stm32f0xx_hal_gpio.o [1]
-  .text               ro code  0x08002be0    0x64  ext_irq.o [1]
-  .text               ro code  0x08002c44   0x378  nrf905_driver.o [1]
-  .text               ro code  0x08002fbc    0x3c  rf_protocol.o [1]
-  .text               ro code  0x08002ff8   0x57c  stm32f0xx_hal_spi.o [1]
-  .text               ro code  0x08003574     0xc  memcpy.o [3]
-  .text               ro code  0x08003580   0x6fe  main.o [1]
-  .text               ro code  0x08003c7e     0x2  startup_stm32f051x8.o [1]
-  .text               ro code  0x08003c80    0x38  sprintf.o [3]
-  .text               ro code  0x08003cb8    0x48  stm32f0xx_hal_pwr.o [1]
-  .text               ro code  0x08003d00   0x198  stm32f0xx_hal_comp.o [1]
-  .text               ro code  0x08003e98    0x28  timer.o [1]
-  .text               ro code  0x08003ec0    0x32  I32ToFlt.o [4]
-  .text               ro code  0x08003ef2     0x2  startup_stm32f051x8.o [1]
-  .text               ro code  0x08003ef4    0x32  FltToDbl.o [4]
-  .text               ro code  0x08003f26    0x62  DblToFlt.o [4]
-  .text               ro code  0x08003f88    0x3a  FltToS32.o [4]
-  .text               ro code  0x08003fc2     0x2  startup_stm32f051x8.o [1]
-  .text               ro code  0x08003fc4   0x12c  host_protocol.o [1]
-  .text               ro code  0x080040f0    0x18  gate_protocol.o [1]
-  .text               ro code  0x08004108   0x158  stm32f0xx_hal_rcc_ex.o [1]
-  .text               ro code  0x08004260   0x588  stm32f0xx_hal_rtc.o [1]
-  .text               ro code  0x080047e8   0x450  stm32f0xx_hal_tim.o [1]
-  .text               ro code  0x08004c38    0x5c  stm32f0xx_hal_tim_ex.o [1]
-  .text               ro code  0x08004c94   0x460  stm32f0xx_hal_uart.o [1]
-  .text               ro code  0x080050f4    0x28  memcmp.o [5]
-  .text               ro code  0x0800511c    0xd8  packbits_init.o [5]
-  .text               ro code  0x080051f4     0xa  abort.o [3]
-  .text               ro code  0x080051fe     0x2  startup_stm32f051x8.o [1]
-  .text               ro code  0x08005200    0x14  exit.o [6]
-  .text               ro code  0x08005214    0x94  system_stm32f0xx.o [1]
-  .text               ro code  0x080052a8    0x40  stm32f0xx_it.o [1]
-  .rodata             const    0x080052e8    0x28  xprintffull.o [3]
-  .text               ro code  0x08005310    0x28  data_init.o [5]
-  .rodata             const    0x08005338    0x24  host_protocol.o [1]
-  .rodata             const    0x0800535c    0x24  host_protocol.o [1]
-  .rodata             const    0x08005380    0x24  main.o [1]
-  .iar.init_table     const    0x080053a4    0x2c  - Linker created -
-  .text               ro code  0x080053d0    0x1a  cmain.o [5]
-  .text               ro code  0x080053ea     0x4  low_level_init.o [3]
-  .text               ro code  0x080053ee     0x8  exit.o [3]
-  .text               ro code  0x080053f6     0x2  startup_stm32f051x8.o [1]
-  .text               ro code  0x080053f8     0xa  cexit.o [5]
-  .text               ro code  0x08005402     0x2  startup_stm32f051x8.o [1]
-  .rodata             const    0x08005404    0x10  main.o [1]
-  .rodata             const    0x08005414    0x10  main.o [1]
-  .rodata             const    0x08005424    0x10  main.o [1]
-  .rodata             const    0x08005434    0x10  main.o [1]
-  .rodata             const    0x08005444    0x10  stm32f0xx_hal_rcc.o [1]
-  .rodata             const    0x08005454    0x10  stm32f0xx_hal_rcc.o [1]
-  .rodata             const    0x08005464    0x10  system_stm32f0xx.o [1]
-  .text               ro code  0x08005474    0x10  startup_stm32f051x8.o [1]
-  .text               ro code  0x08005484     0xc  cstartup_M.o [5]
-  .rodata             const    0x08005490     0x8  host_protocol.o [1]
-  .rodata             const    0x08005498     0x8  host_protocol.o [1]
-  .rodata             const    0x080054a0     0x8  host_protocol.o [1]
-  .rodata             const    0x080054a8     0x8  host_protocol.o [1]
-  .rodata             const    0x080054b0     0x8  host_protocol.o [1]
-  .rodata             const    0x080054b8     0x8  main.o [1]
-  .rodata             const    0x080054c0     0x8  nrf905_driver.o [1]
-  .rodata             const    0x080054c8     0x8  nrf905_driver.o [1]
-  .rodata             const    0x080054d0     0x8  system_stm32f0xx.o [1]
-  .rodata             const    0x080054d8     0x4  host_protocol.o [1]
-  .rodata             const    0x080054dc     0x4  host_protocol.o [1]
-  .rodata             const    0x080054e0     0x4  host_protocol.o [1]
-  .rodata             const    0x080054e4     0x4  main.o [1]
-  .text               ro code  0x080054e8     0x2  startup_stm32f051x8.o [1]
-  .text               ro code  0x080054ea     0x2  startup_stm32f051x8.o [1]
-  .text               ro code  0x080054ec     0x2  startup_stm32f051x8.o [1]
-  .text               ro code  0x080054ee     0x2  startup_stm32f051x8.o [1]
-  .text               ro code  0x080054f0     0x2  startup_stm32f051x8.o [1]
-  .text               ro code  0x080054f2     0x2  startup_stm32f051x8.o [1]
-  .text               ro code  0x080054f4     0x2  startup_stm32f051x8.o [1]
-  .text               ro code  0x080054f6     0x2  startup_stm32f051x8.o [1]
-  .text               ro code  0x080054f8     0x2  startup_stm32f051x8.o [1]
-  .text               ro code  0x080054fa     0x2  startup_stm32f051x8.o [1]
-  .text               ro code  0x080054fc     0x2  startup_stm32f051x8.o [1]
-  .text               ro code  0x080054fe     0x2  startup_stm32f051x8.o [1]
-  .text               ro code  0x08005500     0x2  startup_stm32f051x8.o [1]
-  .text               ro code  0x08005502     0x2  startup_stm32f051x8.o [1]
-  .text               ro code  0x08005504     0x2  startup_stm32f051x8.o [1]
-  .text               ro code  0x08005506     0x2  startup_stm32f051x8.o [1]
-  .text               ro code  0x08005508     0x2  startup_stm32f051x8.o [1]
-  .text               ro code  0x0800550a     0x2  startup_stm32f051x8.o [1]
-  .text               ro code  0x0800550c     0x2  startup_stm32f051x8.o [1]
-  .text               ro code  0x0800550e     0x2  startup_stm32f051x8.o [1]
-  .text               ro code  0x08005510     0x2  startup_stm32f051x8.o [1]
-  .text               ro code  0x08005512     0x2  startup_stm32f051x8.o [1]
-  .rodata             const    0x08005514     0x0  zero_init3.o [5]
-  .rodata             const    0x08005514     0x0  packbits_init.o [5]
-  Initializer bytes   const    0x08005514    0x2f  <for P2 s0>
-                             - 0x08005543  0x5487
+  .text               ro code  0x08001e80   0x5ec  main.o [1]
+  .text               ro code  0x0800246c    0x58  stm32f0xx_hal.o [1]
+  .text               ro code  0x080024c4   0x31c  nrf905_driver.o [1]
+  .text               ro code  0x080027e0    0x38  sprintf.o [3]
+  .text               ro code  0x08002818   0x1c8  stm32f0xx_hal_gpio.o [1]
+  .text               ro code  0x080029e0    0x20  timer.o [1]
+  .text               ro code  0x08002a00    0x38  rf_protocol.o [1]
+  .text               ro code  0x08002a38   0x168  host_protocol.o [1]
+  .text               ro code  0x08002ba0    0x10  gate_protocol.o [1]
+  .text               ro code  0x08002bb0    0x3c  stm32f0xx_hal_pwr.o [1]
+  .text               ro code  0x08002bec    0x6c  ext_irq.o [1]
+  .text               ro code  0x08002c58   0x1f0  stm32f0xx_hal_comp.o [1]
+  .text               ro code  0x08002e48    0x32  I32ToFlt.o [4]
+  .text               ro code  0x08002e7a     0x2  startup_stm32f051x8.o [1]
+  .text               ro code  0x08002e7c    0x32  FltToDbl.o [4]
+  .text               ro code  0x08002eae    0x62  DblToFlt.o [4]
+  .text               ro code  0x08002f10    0x3a  FltToS32.o [4]
+  .text               ro code  0x08002f4a     0x2  startup_stm32f051x8.o [1]
+  .text               ro code  0x08002f4c    0x34  ABImemset.o [5]
+  .text               ro code  0x08002f80   0x59c  stm32f0xx_hal_rcc.o [1]
+  .text               ro code  0x0800351c   0x114  stm32f0xx_hal_rcc_ex.o [1]
+  .text               ro code  0x08003630   0x4be  stm32f0xx_hal_rtc.o [1]
+  .text               ro code  0x08003aee     0x2  startup_stm32f051x8.o [1]
+  .text               ro code  0x08003af0   0x4e4  stm32f0xx_hal_spi.o [1]
+  .text               ro code  0x08003fd4   0x38c  stm32f0xx_hal_tim.o [1]
+  .text               ro code  0x08004360    0x54  stm32f0xx_hal_tim_ex.o [1]
+  .text               ro code  0x080043b4   0x21c  stm32f0xx_hal_msp.o [1]
+  .text               ro code  0x080045d0   0x3c0  stm32f0xx_hal_uart.o [1]
+  .text               ro code  0x08004990    0xa4  stm32f0xx_hal_cortex.o [1]
+  .text               ro code  0x08004a34     0xc  memcpy.o [3]
+  .text               ro code  0x08004a40    0x28  memcmp.o [5]
+  .text               ro code  0x08004a68    0xd8  packbits_init.o [5]
+  .text               ro code  0x08004b40     0xa  abort.o [3]
+  .text               ro code  0x08004b4a     0x2  startup_stm32f051x8.o [1]
+  .text               ro code  0x08004b4c    0x14  exit.o [6]
+  .text               ro code  0x08004b60    0x70  system_stm32f0xx.o [1]
+  .text               ro code  0x08004bd0    0x50  stm32f0xx_it.o [1]
+  .rodata             const    0x08004c20    0x2c  host_protocol.o [1]
+  .rodata             const    0x08004c4c    0x28  xprintffull.o [3]
+  .text               ro code  0x08004c74    0x28  data_init.o [5]
+  .iar.init_table     const    0x08004c9c    0x2c  - Linker created -
+  .text               ro code  0x08004cc8    0x1a  cmain.o [5]
+  .text               ro code  0x08004ce2     0x4  low_level_init.o [3]
+  .text               ro code  0x08004ce6     0x8  exit.o [3]
+  .text               ro code  0x08004cee     0x2  startup_stm32f051x8.o [1]
+  .text               ro code  0x08004cf0     0xa  cexit.o [5]
+  .text               ro code  0x08004cfa     0x2  startup_stm32f051x8.o [1]
+  .text               ro code  0x08004cfc    0x10  startup_stm32f051x8.o [1]
+  .text               ro code  0x08004d0c     0xc  cstartup_M.o [5]
+  .rodata             const    0x08004d18     0x8  system_stm32f0xx.o [1]
+  .text               ro code  0x08004d20     0x2  startup_stm32f051x8.o [1]
+  .text               ro code  0x08004d22     0x2  startup_stm32f051x8.o [1]
+  .text               ro code  0x08004d24     0x2  startup_stm32f051x8.o [1]
+  .text               ro code  0x08004d26     0x2  startup_stm32f051x8.o [1]
+  .text               ro code  0x08004d28     0x2  startup_stm32f051x8.o [1]
+  .text               ro code  0x08004d2a     0x2  startup_stm32f051x8.o [1]
+  .text               ro code  0x08004d2c     0x2  startup_stm32f051x8.o [1]
+  .text               ro code  0x08004d2e     0x2  startup_stm32f051x8.o [1]
+  .text               ro code  0x08004d30     0x2  startup_stm32f051x8.o [1]
+  .text               ro code  0x08004d32     0x2  startup_stm32f051x8.o [1]
+  .text               ro code  0x08004d34     0x2  startup_stm32f051x8.o [1]
+  .text               ro code  0x08004d36     0x2  startup_stm32f051x8.o [1]
+  .text               ro code  0x08004d38     0x2  startup_stm32f051x8.o [1]
+  .text               ro code  0x08004d3a     0x2  startup_stm32f051x8.o [1]
+  .text               ro code  0x08004d3c     0x2  startup_stm32f051x8.o [1]
+  .text               ro code  0x08004d3e     0x2  startup_stm32f051x8.o [1]
+  .text               ro code  0x08004d40     0x2  startup_stm32f051x8.o [1]
+  .text               ro code  0x08004d42     0x2  startup_stm32f051x8.o [1]
+  .text               ro code  0x08004d44     0x2  startup_stm32f051x8.o [1]
+  .text               ro code  0x08004d46     0x2  startup_stm32f051x8.o [1]
+  .text               ro code  0x08004d48     0x2  startup_stm32f051x8.o [1]
+  .rodata             const    0x08004d4a     0x0  zero_init3.o [5]
+  .rodata             const    0x08004d4a     0x0  packbits_init.o [5]
+  Initializer bytes   const    0x08004d4a    0x2f  <for P2 s0>
+                             - 0x08004d79  0x4cbd
 
-"P2":                                       0x938
+"P2":                                       0x940
   P2 s0                        0x20000000   0x140  <Init block>
     __DLIB_PERTHREAD  inited   0x20000000    0x88  localeconv.o [3]
     __DLIB_PERTHREAD  inited   0x20000088    0x74  setlocale.o [3]
@@ -214,31 +192,24 @@ __dlib_dynamic_initialization = normal
     .data             inited   0x2000013c     0x4  system_stm32f0xx.o [1]
   .bss                zero     0x20000140    0x70  main.o [1]
   .bss                zero     0x200001b0    0x64  main.o [1]
-  .bss                zero     0x20000214    0x40  main.o [1]
-  .bss                zero     0x20000254    0x40  rf_protocol.o [1]
-  .bss                zero     0x20000294    0x2c  main.o [1]
-  .bss                zero     0x200002c0    0x2c  main.o [1]
-  .bss                zero     0x200002ec    0x20  main.o [1]
-  .bss                zero     0x2000030c     0x8  xxmemxmalloc.o [3]
-  .bss                zero     0x20000314     0x4  nrf905_driver.o [1]
-  .bss                zero     0x20000318     0x4  nrf905_driver.o [1]
-  .bss                zero     0x2000031c     0x4  stm32f0xx_hal.o [1]
-  .bss                zero     0x20000320     0x4  timer.o [1]
-  .bss                zero     0x20000324     0x4  xgetmemchunk.o [3]
-  .bss                zero     0x20000328     0x1  ext_irq.o [1]
-  .bss                zero     0x20000329     0x1  ext_irq.o [1]
-  .bss                zero     0x2000032a     0x1  gate_protocol.o [1]
-  .bss                zero     0x2000032b     0x1  gate_protocol.o [1]
-  .bss                zero     0x2000032c     0x1  main.o [1]
-  .bss                zero     0x2000032d     0x1  nrf905_driver.o [1]
-  .bss                zero     0x2000032e     0x1  nrf905_driver.o [1]
-  .bss                zero     0x2000032f     0x1  nrf905_driver.o [1]
-  .bss                zero     0x20000330     0x1  rf_protocol.o [1]
-  CSTACK                       0x20000338   0x400  <Block>
-    CSTACK            uninit   0x20000338   0x400  <Block tail>
-  HEAP                         0x20000738   0x200  <Block>
-    HEAP              uninit   0x20000738   0x200  <Block tail>
-                             - 0x20000938   0x938
+  .bss                zero     0x20000214    0x5c  main.o [1]
+  .bss                zero     0x20000270    0x44  rf_protocol.o [1]
+  .bss                zero     0x200002b4    0x40  main.o [1]
+  .bss                zero     0x200002f4    0x20  main.o [1]
+  .bss                zero     0x20000314     0xc  nrf905_driver.o [1]
+  .bss                zero     0x20000320     0x8  xxmemxmalloc.o [3]
+  .bss                zero     0x20000328     0x4  ext_irq.o [1]
+  .bss                zero     0x2000032c     0x4  stm32f0xx_hal.o [1]
+  .bss                zero     0x20000330     0x4  timer.o [1]
+  .bss                zero     0x20000334     0x4  xgetmemchunk.o [3]
+  .bss                zero     0x20000338     0x2  ext_irq.o [1]
+  .bss                zero     0x2000033a     0x2  gate_protocol.o [1]
+  .bss                zero     0x2000033c     0x1  nrf905_driver.o [1]
+  CSTACK                       0x20000340   0x400  <Block>
+    CSTACK            uninit   0x20000340   0x400  <Block tail>
+  HEAP                         0x20000740   0x200  <Block>
+    HEAP              uninit   0x20000740   0x200  <Block tail>
+                             - 0x20000940   0x940
 
 
 *******************************************************************************
@@ -248,12 +219,12 @@ __dlib_dynamic_initialization = normal
           Address     Size
           -------     ----
 Zero (__iar_zero_init3)
-    1 destination range, total size 0x1f1:
-          0x20000140  0x1f1
+    1 destination range, total size 0x1fd:
+          0x20000140  0x1fd
 
 Copy/packbits (__iar_packbits_init3)
     1 source range, total size 0x2f (14% of destination):
-          0x08005514   0x2f
+          0x08004d4a   0x2f
     1 destination range, total size 0x140:
           0x20000000  0x140
 
@@ -265,32 +236,32 @@ Copy/packbits (__iar_packbits_init3)
 
     Module                  ro code  ro data  rw data
     ------                  -------  -------  -------
-D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj: [1]
-    ext_irq.o                   100                 2
-    gate_protocol.o              24                 2
-    host_protocol.o             300      133       64
-    main.o                    1 790      112      397
-    nrf905_driver.o             888       16       11
-    rf_protocol.o                60                65
-    startup_stm32f051x8.o       264
-    stm32f0xx_hal.o              92                 4
-    stm32f0xx_hal_comp.o        408
-    stm32f0xx_hal_cortex.o      272
-    stm32f0xx_hal_gpio.o        572
-    stm32f0xx_hal_msp.o         632
-    stm32f0xx_hal_pwr.o          72
-    stm32f0xx_hal_rcc.o       1 804       32
-    stm32f0xx_hal_rcc_ex.o      344
-    stm32f0xx_hal_rtc.o       1 416
-    stm32f0xx_hal_spi.o       1 404
-    stm32f0xx_hal_tim.o       1 104
-    stm32f0xx_hal_tim_ex.o       92
-    stm32f0xx_hal_uart.o      1 120
-    stm32f0xx_it.o               64
-    system_stm32f0xx.o          148       25        4
-    timer.o                      40                 4
+D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj: [1]
+    ext_irq.o                   108                 6
+    gate_protocol.o              16                 2
+    host_protocol.o             360       53       64
+    main.o                    1 516               400
+    nrf905_driver.o             796                13
+    rf_protocol.o                56                68
+    startup_stm32f051x8.o       262
+    stm32f0xx_hal.o              88                 4
+    stm32f0xx_hal_comp.o        496
+    stm32f0xx_hal_cortex.o      164
+    stm32f0xx_hal_gpio.o        456
+    stm32f0xx_hal_msp.o         540
+    stm32f0xx_hal_pwr.o          60
+    stm32f0xx_hal_rcc.o       1 436
+    stm32f0xx_hal_rcc_ex.o      276
+    stm32f0xx_hal_rtc.o       1 214
+    stm32f0xx_hal_spi.o       1 252
+    stm32f0xx_hal_tim.o         908
+    stm32f0xx_hal_tim_ex.o       84
+    stm32f0xx_hal_uart.o        960
+    stm32f0xx_it.o               80
+    system_stm32f0xx.o          112        9        4
+    timer.o                      32                 4
     -------------------------------------------------
-    Total:                   13 010      318      553
+    Total:                   11 272       62      565
 
 command line: [2]
     -------------------------------------------------
@@ -362,7 +333,7 @@ shb_l.a: [6]
 
     Linker created                        44    1 536
 -----------------------------------------------------
-    Grand Total:             21 388      439    2 353
+    Grand Total:             19 650      183    2 365
 
 
 *******************************************************************************
@@ -371,125 +342,133 @@ shb_l.a: [6]
 
 Entry                      Address   Size  Type      Object
 -----                      -------   ----  ----      ------
-.iar.init_table$$Base   0x080053a4          --   Gb  - Linker created -
-.iar.init_table$$Limit  0x080053d0          --   Gb  - Linker created -
-?main                   0x080053d1         Code  Gb  cmain.o [5]
-AHBPrescTable           0x08005464   0x10  Data  Gb  system_stm32f0xx.o [1]
-APBPrescTable           0x080054d0    0x8  Data  Gb  system_stm32f0xx.o [1]
-CSTACK$$Base            0x20000338          --   Gb  - Linker created -
-CSTACK$$Limit           0x20000738          --   Gb  - Linker created -
-ClearDataFromHost       0x080040f1    0xe  Code  Gb  gate_protocol.o [1]
-Delay_us                0x08002c5b   0x16  Code  Gb  nrf905_driver.o [1]
-EXTI0_1_IRQHandler      0x080052cd    0xa  Code  Gb  stm32f0xx_it.o [1]
-EXTI4_15_IRQHandler     0x080052d7   0x12  Code  Gb  stm32f0xx_it.o [1]
-Error_Handler           0x08003c7d    0x2  Code  Gb  main.o [1]
-GetButtonState          0x08002c2d   0x10  Code  Gb  ext_irq.o [1]
-GetDataFromAir          0x08002fbd   0x24  Code  Gb  rf_protocol.o [1]
-GetDoorSensorState      0x08002c1d   0x10  Code  Gb  ext_irq.o [1]
-GetTimer                0x08003eb5    0x6  Code  Gb  timer.o [1]
-GetTxStatus             0x08002c45    0x6  Code  Gb  nrf905_driver.o [1]
+.iar.init_table$$Base   0x08004c9c          --   Gb  - Linker created -
+.iar.init_table$$Limit  0x08004cc8          --   Gb  - Linker created -
+?main                   0x08004cc9         Code  Gb  cmain.o [5]
+ADC1_COMP_IRQHandler    0x08004c09    0xa  Code  Gb  stm32f0xx_it.o [1]
+AHBPrescTable           0x08004bc0   0x10  Data  Gb  system_stm32f0xx.o [1]
+APBPrescTable           0x08004d18    0x8  Data  Gb  system_stm32f0xx.o [1]
+CSTACK$$Base            0x20000340          --   Gb  - Linker created -
+CSTACK$$Limit           0x20000740          --   Gb  - Linker created -
+ClearDataFromHost       0x08002ba1    0xa  Code  Gb  gate_protocol.o [1]
+Delay_us                0x080024db   0x12  Code  Gb  nrf905_driver.o [1]
+EXTI0_1_IRQHandler      0x08004bed    0xa  Code  Gb  stm32f0xx_it.o [1]
+EXTI4_15_IRQHandler     0x08004bf7   0x12  Code  Gb  stm32f0xx_it.o [1]
+Error_Handler           0x0800245d    0x2  Code  Gb  main.o [1]
+GetButtonState          0x08002c2d    0xa  Code  Gb  ext_irq.o [1]
+GetDataFromAir          0x08002a01   0x20  Code  Gb  rf_protocol.o [1]
+GetDoorSensorState      0x08002c23    0xa  Code  Gb  ext_irq.o [1]
+GetSensorCounter        0x08002c41    0x6  Code  Gb  ext_irq.o [1]
+GetTimer                0x080029f5    0x6  Code  Gb  timer.o [1]
+GetTxStatus             0x080024c5    0x6  Code  Gb  nrf905_driver.o [1]
 HAL_COMP_GetOutputLevel
-                        0x08003e55   0x30  Code  Gb  stm32f0xx_hal_comp.o [1]
-HAL_COMP_Init           0x08003d01   0xa4  Code  Gb  stm32f0xx_hal_comp.o [1]
-HAL_COMP_MspInit        0x08002625   0x88  Code  Gb  stm32f0xx_hal_msp.o [1]
-HAL_COMP_Start          0x08003da5   0x60  Code  Gb  stm32f0xx_hal_comp.o [1]
-HAL_COMP_Stop           0x08003e05   0x46  Code  Gb  stm32f0xx_hal_comp.o [1]
-HAL_GPIO_EXTI_Callback  0x08002be1   0x3c  Code  Wk  ext_irq.o [1]
+                        0x08002e07   0x20  Code  Gb  stm32f0xx_hal_comp.o [1]
+HAL_COMP_IRQHandler     0x08002de3   0x24  Code  Gb  stm32f0xx_hal_comp.o [1]
+HAL_COMP_Init           0x08002c59   0x8a  Code  Gb  stm32f0xx_hal_comp.o [1]
+HAL_COMP_MspInit        0x080043df   0x84  Code  Gb  stm32f0xx_hal_msp.o [1]
+HAL_COMP_Start          0x08002ce3   0x50  Code  Gb  stm32f0xx_hal_comp.o [1]
+HAL_COMP_Start_IT       0x08002d6f   0x52  Code  Gb  stm32f0xx_hal_comp.o [1]
+HAL_COMP_Stop           0x08002d33   0x3c  Code  Gb  stm32f0xx_hal_comp.o [1]
+HAL_COMP_Stop_IT        0x08002dc1   0x22  Code  Gb  stm32f0xx_hal_comp.o [1]
+HAL_COMP_TriggerCallback
+                        0x08002c37    0xa  Code  Wk  ext_irq.o [1]
+HAL_GPIO_EXTI_Callback  0x08002bed   0x36  Code  Wk  ext_irq.o [1]
 HAL_GPIO_EXTI_IRQHandler
-                        0x08002b97   0x20  Code  Gb  stm32f0xx_hal_gpio.o [1]
-HAL_GPIO_Init           0x080029a5  0x1de  Code  Gb  stm32f0xx_hal_gpio.o [1]
-HAL_GPIO_WritePin       0x08002b83   0x14  Code  Gb  stm32f0xx_hal_gpio.o [1]
-HAL_GetTick             0x080025d9    0x6  Code  Wk  stm32f0xx_hal.o [1]
-HAL_IncTick             0x080025cd    0xc  Code  Wk  stm32f0xx_hal.o [1]
-HAL_Init                0x0800258d   0x1c  Code  Gb  stm32f0xx_hal.o [1]
-HAL_InitTick            0x080025a9   0x24  Code  Wk  stm32f0xx_hal.o [1]
-HAL_MspInit             0x080025e9   0x3c  Code  Gb  stm32f0xx_hal_msp.o [1]
-HAL_NVIC_EnableIRQ      0x0800293f    0xe  Code  Gb  stm32f0xx_hal_cortex.o [1]
-HAL_NVIC_SetPriority    0x0800292b   0x14  Code  Gb  stm32f0xx_hal_cortex.o [1]
-HAL_PWR_EnterSTOPMode   0x08003cb9   0x3e  Code  Gb  stm32f0xx_hal_pwr.o [1]
+                        0x080029af   0x16  Code  Gb  stm32f0xx_hal_gpio.o [1]
+HAL_GPIO_Init           0x08002819  0x18a  Code  Gb  stm32f0xx_hal_gpio.o [1]
+HAL_GPIO_WritePin       0x080029a3    0xc  Code  Gb  stm32f0xx_hal_gpio.o [1]
+HAL_GetTick             0x080024b5    0x6  Code  Wk  stm32f0xx_hal.o [1]
+HAL_IncTick             0x080024ab    0xa  Code  Wk  stm32f0xx_hal.o [1]
+HAL_Init                0x0800246d   0x1a  Code  Gb  stm32f0xx_hal.o [1]
+HAL_InitTick            0x08002487   0x24  Code  Wk  stm32f0xx_hal.o [1]
+HAL_MspInit             0x080043b5   0x2a  Code  Gb  stm32f0xx_hal_msp.o [1]
+HAL_NVIC_EnableIRQ      0x08004a15    0x8  Code  Gb  stm32f0xx_hal_cortex.o [1]
+HAL_NVIC_SetPriority    0x08004a0d    0x8  Code  Gb  stm32f0xx_hal_cortex.o [1]
+HAL_PWR_EnterSTOPMode   0x08002bb1   0x32  Code  Gb  stm32f0xx_hal_pwr.o [1]
 HAL_RCCEx_PeriphCLKConfig
-                        0x08004109  0x138  Code  Gb  stm32f0xx_hal_rcc_ex.o [1]
-HAL_RCC_ClockConfig     0x08002349  0x15e  Code  Gb  stm32f0xx_hal_rcc.o [1]
-HAL_RCC_GetHCLKFreq     0x0800253d    0x6  Code  Gb  stm32f0xx_hal_rcc.o [1]
-HAL_RCC_GetPCLK1Freq    0x08002543   0x18  Code  Gb  stm32f0xx_hal_rcc.o [1]
+                        0x0800351d   0xfa  Code  Gb  stm32f0xx_hal_rcc_ex.o [1]
+HAL_RCC_ClockConfig     0x0800332d  0x122  Code  Gb  stm32f0xx_hal_rcc.o [1]
+HAL_RCC_GetHCLKFreq     0x080034b1    0x6  Code  Gb  stm32f0xx_hal_rcc.o [1]
+HAL_RCC_GetPCLK1Freq    0x080034bd   0x18  Code  Gb  stm32f0xx_hal_rcc.o [1]
 HAL_RCC_GetSysClockFreq
-                        0x080024bd   0x80  Code  Gb  stm32f0xx_hal_rcc.o [1]
-HAL_RCC_OscConfig       0x08001e81  0x4aa  Code  Gb  stm32f0xx_hal_rcc.o [1]
+                        0x08003459   0x58  Code  Gb  stm32f0xx_hal_rcc.o [1]
+HAL_RCC_OscConfig       0x08002f81  0x3a8  Code  Gb  stm32f0xx_hal_rcc.o [1]
 HAL_RTC_AlarmAEventCallback
-                        0x08004731    0x2  Code  Wk  stm32f0xx_hal_rtc.o [1]
+                        0x08003a41    0x2  Code  Wk  stm32f0xx_hal_rtc.o [1]
 HAL_RTC_AlarmIRQHandler
-                        0x080046f5   0x38  Code  Gb  stm32f0xx_hal_rtc.o [1]
-HAL_RTC_Init            0x08004261   0xca  Code  Gb  stm32f0xx_hal_rtc.o [1]
-HAL_RTC_MspInit         0x080026ad   0x2c  Code  Gb  stm32f0xx_hal_msp.o [1]
-HAL_RTC_SetAlarm_IT     0x08004559  0x196  Code  Gb  stm32f0xx_hal_rtc.o [1]
-HAL_RTC_SetDate         0x08004449  0x102  Code  Gb  stm32f0xx_hal_rtc.o [1]
-HAL_RTC_SetTime         0x0800432b  0x11a  Code  Gb  stm32f0xx_hal_rtc.o [1]
-HAL_RTC_WaitForSynchro  0x08004733   0x34  Code  Gb  stm32f0xx_hal_rtc.o [1]
-HAL_SPI_Init            0x08002ff9   0xda  Code  Gb  stm32f0xx_hal_spi.o [1]
-HAL_SPI_MspInit         0x080026d9   0x70  Code  Gb  stm32f0xx_hal_msp.o [1]
+                        0x08003a0d   0x34  Code  Gb  stm32f0xx_hal_rtc.o [1]
+HAL_RTC_Init            0x08003631   0xae  Code  Gb  stm32f0xx_hal_rtc.o [1]
+HAL_RTC_MspInit         0x08004463   0x2a  Code  Gb  stm32f0xx_hal_msp.o [1]
+HAL_RTC_SetAlarm_IT     0x080038b9  0x150  Code  Gb  stm32f0xx_hal_rtc.o [1]
+HAL_RTC_SetDate         0x080037c7   0xe4  Code  Gb  stm32f0xx_hal_rtc.o [1]
+HAL_RTC_SetTime         0x080036df   0xe8  Code  Gb  stm32f0xx_hal_rtc.o [1]
+HAL_RTC_WaitForSynchro  0x08003a49   0x30  Code  Gb  stm32f0xx_hal_rtc.o [1]
+HAL_SPI_Init            0x08003af1   0xbe  Code  Gb  stm32f0xx_hal_spi.o [1]
+HAL_SPI_MspInit         0x0800448d   0x5a  Code  Gb  stm32f0xx_hal_msp.o [1]
 HAL_SPI_TransmitReceive
-                        0x080030dd  0x2c8  Code  Gb  stm32f0xx_hal_spi.o [1]
-HAL_SYSTICK_Config      0x0800294d    0xc  Code  Gb  stm32f0xx_hal_cortex.o [1]
+                        0x08003bb9  0x26e  Code  Gb  stm32f0xx_hal_spi.o [1]
+HAL_SYSTICK_Config      0x08004a1d    0x8  Code  Gb  stm32f0xx_hal_cortex.o [1]
 HAL_TIMEx_MasterConfigSynchronization
-                        0x08004c39   0x5c  Code  Gb  stm32f0xx_hal_tim_ex.o [1]
-HAL_TIM_MspPostInit     0x0800276d   0x52  Code  Gb  stm32f0xx_hal_msp.o [1]
+                        0x08004361   0x54  Code  Gb  stm32f0xx_hal_tim_ex.o [1]
+HAL_TIM_MspPostInit     0x08004507   0x46  Code  Gb  stm32f0xx_hal_msp.o [1]
 HAL_TIM_PWM_ConfigChannel
-                        0x08004823  0x104  Code  Gb  stm32f0xx_hal_tim.o [1]
-HAL_TIM_PWM_Init        0x080047e9   0x3a  Code  Gb  stm32f0xx_hal_tim.o [1]
-HAL_TIM_PWM_MspInit     0x08002749   0x24  Code  Gb  stm32f0xx_hal_msp.o [1]
-HAL_UART_Init           0x08004c95   0x7e  Code  Gb  stm32f0xx_hal_uart.o [1]
-HAL_UART_MspInit        0x080027c5   0x6e  Code  Gb  stm32f0xx_hal_msp.o [1]
-HEAP$$Base              0x20000738          --   Gb  - Linker created -
-HEAP$$Limit             0x20000938          --   Gb  - Linker created -
-HostCommandParcer       0x08003fc5  0x12c  Code  Gb  host_protocol.o [1]
-InStream_Read           0x0800511d   0x22  Code  Lc  packbits_init.o [5]
+                        0x0800400d   0xe0  Code  Gb  stm32f0xx_hal_tim.o [1]
+HAL_TIM_PWM_Init        0x08003fd5   0x38  Code  Gb  stm32f0xx_hal_tim.o [1]
+HAL_TIM_PWM_MspInit     0x080044e7   0x20  Code  Gb  stm32f0xx_hal_msp.o [1]
+HAL_UART_Init           0x080045d1   0x6a  Code  Gb  stm32f0xx_hal_uart.o [1]
+HAL_UART_MspInit        0x0800454d   0x5a  Code  Gb  stm32f0xx_hal_msp.o [1]
+HEAP$$Base              0x20000740          --   Gb  - Linker created -
+HEAP$$Limit             0x20000940          --   Gb  - Linker created -
+HostCommandParcer       0x08002a39  0x10e  Code  Gb  host_protocol.o [1]
+InStream_Read           0x08004a69   0x22  Code  Lc  packbits_init.o [5]
 LoadInt                 0x0800071b   0x68  Code  Lc  xprintffull.o [3]
-MX_COMP1_Init           0x08003805   0x48  Code  Lc  main.o [1]
-MX_COMP2_Init           0x0800384d   0x48  Code  Lc  main.o [1]
-MX_GPIO_Init            0x08003b25  0x128  Code  Lc  main.o [1]
-MX_RTC_Init             0x080038b1   0xf8  Code  Lc  main.o [1]
-MX_SPI1_Init            0x080039c5   0x6c  Code  Lc  main.o [1]
-MX_TIM3_Init            0x08003a35   0x8c  Code  Lc  main.o [1]
-MX_USART1_UART_Init     0x08003ac1   0x50  Code  Lc  main.o [1]
-NVIC_EnableIRQ          0x08002861    0xe  Code  Lc  stm32f0xx_hal_cortex.o [1]
-NVIC_SetPriority        0x0800286f   0x8a  Code  Lc  stm32f0xx_hal_cortex.o [1]
-Nrf905Init              0x08002e6d  0x12a  Code  Gb  nrf905_driver.o [1]
-Nrf905RegCom            0x08002c71   0x56  Code  Gb  nrf905_driver.o [1]
-PowerDownMode           0x08002cc7   0x12  Code  Gb  nrf905_driver.o [1]
-PowerUpMode             0x08002cd9   0x18  Code  Gb  nrf905_driver.o [1]
-RF_Receive              0x08002fe1   0x10  Code  Gb  rf_protocol.o [1]
-RTC_Bcd2ToByte          0x080047cd   0x1c  Code  Gb  stm32f0xx_hal_rtc.o [1]
-RTC_ByteToBcd2          0x080047b5   0x18  Code  Gb  stm32f0xx_hal_rtc.o [1]
-RTC_EnterInitMode       0x08004767   0x38  Code  Gb  stm32f0xx_hal_rtc.o [1]
-RTC_IRQHandler          0x080052b5   0x10  Code  Gb  stm32f0xx_it.o [1]
-ReceiveMode             0x08002d17   0x26  Code  Gb  nrf905_driver.o [1]
-ReceiveMultiPacket      0x08002deb   0x76  Code  Gb  nrf905_driver.o [1]
-Region$$Table$$Base     0x080053a4          --   Gb  - Linker created -
-Region$$Table$$Limit    0x080053d0          --   Gb  - Linker created -
-SPI_EndRxTxTransaction  0x08003509   0x6c  Code  Lc  stm32f0xx_hal_spi.o [1]
+MX_COMP1_Init           0x08002125   0x2c  Code  Lc  main.o [1]
+MX_COMP2_Init           0x08002151   0x2c  Code  Lc  main.o [1]
+MX_GPIO_Init            0x08002335   0xec  Code  Lc  main.o [1]
+MX_RTC_Init             0x08002189   0xbc  Code  Lc  main.o [1]
+MX_SPI1_Init            0x08002245   0x42  Code  Lc  main.o [1]
+MX_TIM3_Init            0x0800228d   0x6e  Code  Lc  main.o [1]
+MX_USART1_UART_Init     0x080022fb   0x30  Code  Lc  main.o [1]
+NVIC_EnableIRQ          0x08004991    0xe  Code  Lc  stm32f0xx_hal_cortex.o [1]
+NVIC_SetPriority        0x0800499f   0x44  Code  Lc  stm32f0xx_hal_cortex.o [1]
+Nrf905Init              0x080026c5   0xfc  Code  Gb  nrf905_driver.o [1]
+Nrf905RegCom            0x080024ed   0x56  Code  Gb  nrf905_driver.o [1]
+PowerDownMode           0x08002543   0x12  Code  Gb  nrf905_driver.o [1]
+PowerUpMode             0x08002555   0x16  Code  Gb  nrf905_driver.o [1]
+RF_Receive              0x08002a21   0x12  Code  Gb  rf_protocol.o [1]
+RTC_Bcd2ToByte          0x08003adb   0x14  Code  Gb  stm32f0xx_hal_rtc.o [1]
+RTC_ByteToBcd2          0x08003ac5   0x16  Code  Gb  stm32f0xx_hal_rtc.o [1]
+RTC_EnterInitMode       0x08003a7d   0x36  Code  Gb  stm32f0xx_hal_rtc.o [1]
+RTC_IRQHandler          0x08004bdd   0x10  Code  Gb  stm32f0xx_it.o [1]
+ReceiveMode             0x0800258d   0x24  Code  Gb  nrf905_driver.o [1]
+ReceiveMultiPacket      0x08002655   0x6e  Code  Gb  nrf905_driver.o [1]
+Region$$Table$$Base     0x08004c9c          --   Gb  - Linker created -
+Region$$Table$$Limit    0x08004cc8          --   Gb  - Linker created -
+ResetSensorCounter      0x08002c47    0x8  Code  Gb  ext_irq.o [1]
+SPI_EndRxTxTransaction  0x08003f65   0x6a  Code  Lc  stm32f0xx_hal_spi.o [1]
 SPI_WaitFifoStateUntilTimeout
-                        0x0800344d   0xb6  Code  Lc  stm32f0xx_hal_spi.o [1]
+                        0x08003ec1   0xa4  Code  Lc  stm32f0xx_hal_spi.o [1]
 SPI_WaitFlagStateUntilTimeout
-                        0x080033a9   0xa4  Code  Lc  stm32f0xx_hal_spi.o [1]
-SetTimer                0x08003e99    0x6  Code  Gb  timer.o [1]
-SysTick_Config          0x080028f9   0x32  Code  Lc  stm32f0xx_hal_cortex.o [1]
-SysTick_Handler         0x080052a9    0xc  Code  Gb  stm32f0xx_it.o [1]
-SystemClock_Config      0x0800377b   0x8a  Code  Gb  main.o [1]
+                        0x08003e2d   0x94  Code  Lc  stm32f0xx_hal_spi.o [1]
+SetTimer                0x080029e1    0x6  Code  Gb  timer.o [1]
+SysTick_Config          0x080049e3   0x2a  Code  Lc  stm32f0xx_hal_cortex.o [1]
+SysTick_Handler         0x08004bd1    0xc  Code  Gb  stm32f0xx_it.o [1]
+SystemClock_Config      0x080020a9   0x7c  Code  Gb  main.o [1]
 SystemCoreClock         0x2000013c    0x4  Data  Gb  system_stm32f0xx.o [1]
-SystemInit              0x08005215   0x68  Code  Gb  system_stm32f0xx.o [1]
-TIM_Base_SetConfig      0x0800492d   0x94  Code  Gb  stm32f0xx_hal_tim.o [1]
-TIM_OC1_SetConfig       0x080049c1   0x96  Code  Lc  stm32f0xx_hal_tim.o [1]
-TIM_OC2_SetConfig       0x08004a57   0x92  Code  Gb  stm32f0xx_hal_tim.o [1]
-TIM_OC3_SetConfig       0x08004ae9   0x92  Code  Lc  stm32f0xx_hal_tim.o [1]
-TIM_OC4_SetConfig       0x08004b95   0x70  Code  Lc  stm32f0xx_hal_tim.o [1]
-Timer                   0x08003e9f   0x16  Code  Gb  timer.o [1]
-TransmitMode            0x08002cf1   0x26  Code  Gb  nrf905_driver.o [1]
-TransmitMultiPacket     0x08002d3d   0xae  Code  Gb  nrf905_driver.o [1]
-UART_AdvFeatureConfig   0x08004edf   0xde  Code  Gb  stm32f0xx_hal_uart.o [1]
-UART_CheckIdleState     0x08004fd1   0x72  Code  Gb  stm32f0xx_hal_uart.o [1]
-UART_SetConfig          0x08004d19  0x1c6  Code  Gb  stm32f0xx_hal_uart.o [1]
+SystemInit              0x08004b61   0x48  Code  Gb  system_stm32f0xx.o [1]
+TIM_Base_SetConfig      0x080040f1   0x88  Code  Gb  stm32f0xx_hal_tim.o [1]
+TIM_OC1_SetConfig       0x08004179   0x76  Code  Lc  stm32f0xx_hal_tim.o [1]
+TIM_OC2_SetConfig       0x080041ef   0x6c  Code  Gb  stm32f0xx_hal_tim.o [1]
+TIM_OC3_SetConfig       0x0800425b   0x68  Code  Lc  stm32f0xx_hal_tim.o [1]
+TIM_OC4_SetConfig       0x080042cd   0x54  Code  Lc  stm32f0xx_hal_tim.o [1]
+Timer                   0x080029e7    0xe  Code  Gb  timer.o [1]
+TransmitMode            0x0800256b   0x22  Code  Gb  nrf905_driver.o [1]
+TransmitMultiPacket     0x080025b1   0xa4  Code  Gb  nrf905_driver.o [1]
+UART_AdvFeatureConfig   0x080047a7   0xca  Code  Gb  stm32f0xx_hal_uart.o [1]
+UART_CheckIdleState     0x08004879   0x68  Code  Gb  stm32f0xx_hal_uart.o [1]
+UART_SetConfig          0x08004641  0x164  Code  Gb  stm32f0xx_hal_uart.o [1]
 UART_WaitOnFlagUntilTimeout
-                        0x0800504d   0x6a  Code  Gb  stm32f0xx_hal_uart.o [1]
+                        0x080048f5   0x64  Code  Gb  stm32f0xx_hal_uart.o [1]
 _EncodingSb_Mbtowc      0x08001e11   0x2c  Code  Gb  xencoding_sb.o [3]
 _EncodingSb_Wctomb      0x08001dfd   0x14  Code  Gb  xencoding_sb.o [3]
 _GenldFull              0x08001081  0x2d4  Code  Lc  xprintffull.o [3]
@@ -514,103 +493,104 @@ __ICFEDIT_region_RAM_start__ {Abs}
                         0x20000000          --   Gb  command line/config [2]
 __aeabi_cdcmple         0x0800164b         Code  Gb  DblCmpLe.o [4]
 __aeabi_cdrcmple        0x0800167d         Code  Gb  DblCmpGe.o [4]
-__aeabi_d2f             0x08003f27         Code  Gb  DblToFlt.o [4]
+__aeabi_d2f             0x08002eaf         Code  Gb  DblToFlt.o [4]
 __aeabi_d2iz            0x080017f5         Code  Gb  DblToI32.o [4]
 __aeabi_d2uiz           0x08001819         Code  Gb  DblToI32.o [4]
 __aeabi_dadd            0x08001885         Code  Gb  DblAddSub.o [4]
 __aeabi_ddiv            0x08001c9d         Code  Gb  DblDiv.o [4]
 __aeabi_dmul            0x08001b19         Code  Gb  DblMul.o [4]
 __aeabi_dsub            0x0800194b         Code  Gb  DblAddSub.o [4]
-__aeabi_f2d             0x08003ef5         Code  Gb  FltToDbl.o [4]
-__aeabi_f2iz            0x08003f89         Code  Gb  FltToS32.o [4]
+__aeabi_f2d             0x08002e7d         Code  Gb  FltToDbl.o [4]
+__aeabi_f2iz            0x08002f11         Code  Gb  FltToS32.o [4]
 __aeabi_i2d             0x08001851         Code  Gb  I32ToDbl.o [4]
-__aeabi_i2f             0x08003ec1         Code  Gb  I32ToFlt.o [4]
+__aeabi_i2f             0x08002e49         Code  Gb  I32ToFlt.o [4]
 __aeabi_idiv            0x08001a65         Code  Gb  I32DivModFast.o [5]
 __aeabi_idiv0           0x08001e7d         Code  Gb  IntDivZer.o [5]
 __aeabi_idivmod         0x08001a65         Code  Gb  I32DivModFast.o [5]
 __aeabi_ldiv0           0x08001e79         Code  Gb  I64DivZer.o [5]
-__aeabi_memclr4         0x080029a1         Code  Gb  ABImemset.o [5]
-__aeabi_memclr8         0x080029a1         Code  Gb  ABImemset.o [5]
+__aeabi_memclr4         0x08002f7d         Code  Gb  ABImemset.o [5]
+__aeabi_memclr8         0x08002f7d         Code  Gb  ABImemset.o [5]
 __aeabi_memcpy          0x080014b9         Code  Gb  ABImemcpy.o [5]
 __aeabi_memcpy4         0x080014e1         Code  Wk  ABImemcpy.o [5]
 __aeabi_ui2d            0x08001865         Code  Gb  I32ToDbl.o [4]
 __aeabi_uidiv           0x08001a6b         Code  Gb  I32DivModFast.o [5]
 __aeabi_uidivmod        0x08001a6b         Code  Gb  I32DivModFast.o [5]
 __aeabi_uldivmod        0x0800159d         Code  Gb  I64DivMod.o [5]
-__cmain                 0x080053d1         Code  Gb  cmain.o [5]
-__data_Aldata           0x2000030c    0x8  Data  Gb  xxmemxmalloc.o [3]
+__cmain                 0x08004cc9         Code  Gb  cmain.o [5]
+__data_Aldata           0x20000320    0x8  Data  Gb  xxmemxmalloc.o [3]
 __data_GetMemChunk      0x08001e4d   0x2c  Code  Gb  xgetmemchunk.o [3]
-__exit                  0x08005201   0x14  Code  Gb  exit.o [6]
+__exit                  0x08004b4d   0x14  Code  Gb  exit.o [6]
 __iar_Dnorm             0x08001607   0x44  Code  Gb  xdnorm.o [4]
 __iar_Dscale            0x080016d9  0x11c  Code  Gb  xdscale.o [4]
 __iar_Locale_lconv_init
                         0x08001d61   0x32  Code  Gb  localeconv.o [3]
 __iar_Mbcurmax          0x080013df    0xa  Code  Gb  xmbcurmax.o [3]
 __iar_Memchr            0x080013c7   0x18  Code  Gb  memchr.o [5]
-__iar_Memset4_word      0x08002971         Code  Gb  ABImemset.o [5]
+__iar_Memset4_word      0x08002f4d         Code  Gb  ABImemset.o [5]
 __iar_Strchr            0x080013a3   0x14  Code  Gb  strchr.o [5]
 __iar_d2uiz             0x0800181d         Code  Gb  DblToI32.o [4]
-__iar_data_init3        0x08005311   0x28  Code  Gb  data_init.o [5]
+__iar_data_init3        0x08004c75   0x28  Code  Gb  data_init.o [5]
 __iar_dlib_perthread_access
                         0x08001e7f    0x2  Code  Gb  xtls.o [3]
-__iar_packbits_init3    0x0800513f   0xb6  Code  Gb  packbits_init.o [5]
-__iar_program_start     0x08005485         Code  Gb  cstartup_M.o [5]
+__iar_packbits_init3    0x08004a8b   0xb6  Code  Gb  packbits_init.o [5]
+__iar_program_start     0x08004d0d         Code  Gb  cstartup_M.o [5]
 __iar_ui2d              0x08001869         Code  Gb  I32ToDbl.o [4]
-__iar_ui2f              0x08003ed9         Code  Gb  I32ToFlt.o [4]
+__iar_ui2f              0x08002e61         Code  Gb  I32ToFlt.o [4]
 __iar_zero_init3        0x080016af   0x2a  Code  Gb  zero_init3.o [5]
-__low_level_init        0x080053eb    0x4  Code  Gb  low_level_init.o [3]
+__low_level_init        0x08004ce3    0x4  Code  Gb  low_level_init.o [3]
 __vector_table          0x08000000         Data  Gb  startup_stm32f051x8.o [1]
-_call_main              0x080053dd         Code  Gb  cmain.o [5]
-_exit                   0x080053f9         Code  Gb  cexit.o [5]
-_main                   0x080053e7         Code  Gb  cmain.o [5]
-abort                   0x080051f5    0xa  Code  Gb  abort.o [3]
-bstate                  0x20000329    0x1  Data  Lc  ext_irq.o [1]
-cntRx                   0x20000318    0x4  Data  Gb  nrf905_driver.o [1]
-cntTx                   0x20000314    0x4  Data  Gb  nrf905_driver.o [1]
-data_ready              0x2000032b    0x1  Data  Gb  gate_protocol.o [1]
-data_ready              0x20000330    0x1  Data  Lc  rf_protocol.o [1]
+_call_main              0x08004cd5         Code  Gb  cmain.o [5]
+_exit                   0x08004cf1         Code  Gb  cexit.o [5]
+_main                   0x08004cdf         Code  Gb  cmain.o [5]
+abort                   0x08004b41    0xa  Code  Gb  abort.o [3]
+bstate                  0x20000339    0x1  Data  Lc  ext_irq.o [1]
+cntRx                   0x2000031c    0x4  Data  Gb  nrf905_driver.o [1]
+cntTx                   0x20000318    0x4  Data  Gb  nrf905_driver.o [1]
+data_ready              0x2000033b    0x1  Data  Gb  gate_protocol.o [1]
+data_ready              0x20000270    0x1  Data  Lc  rf_protocol.o [1]
 div                     0x08001dc9   0x20  Code  Gb  div.o [3]
-exit                    0x080053ef    0x8  Code  Gb  exit.o [3]
+exit                    0x08004ce7    0x8  Code  Gb  exit.o [3]
 free                    0x08001515   0x82  Code  Gb  xxmemxfree.o [3]
-hcomp1                  0x20000294   0x2c  Data  Gb  main.o [1]
-hcomp2                  0x200002c0   0x2c  Data  Gb  main.o [1]
-hrtc                    0x200002ec   0x20  Data  Gb  main.o [1]
+hcomp1                  0x20000218   0x2c  Data  Gb  main.o [1]
+hcomp2                  0x20000244   0x2c  Data  Gb  main.o [1]
+hrtc                    0x200002f4   0x20  Data  Gb  main.o [1]
 hspi1                   0x200001b0   0x64  Data  Gb  main.o [1]
 hstrings                0x200000fc   0x40  Data  Gb  host_protocol.o [1]
-htim3                   0x20000214   0x40  Data  Gb  main.o [1]
+htim3                   0x200002b4   0x40  Data  Gb  main.o [1]
 huart1                  0x20000140   0x70  Data  Gb  main.o [1]
 localeconv              0x08001d93   0x18  Code  Gb  localeconv.o [3]
-main                    0x08003581  0x1fa  Code  Gb  main.o [1]
+main                    0x08001e81  0x1c2  Code  Gb  main.o [1]
 malloc                  0x080013e9   0xb2  Code  Gb  xxmemxmalloc.o [3]
-memcmp                  0x080050f5   0x28  Code  Gb  memcmp.o [5]
-memcpy                  0x08003575    0xc  Code  Gb  memcpy.o [3]
-point                   0x2000032a    0x1  Data  Lc  gate_protocol.o [1]
-rTxStatus               0x08002c53    0x8  Code  Gb  nrf905_driver.o [1]
-rxAddr                  0x080054c8    0x8  Data  Gb  nrf905_driver.o [1]
-rx_buff                 0x20000254   0x40  Data  Lc  rf_protocol.o [1]
-rx_data                 0x2000032e    0x1  Data  Lc  nrf905_driver.o [1]
-sTxStatus               0x08002c4b    0x8  Code  Gb  nrf905_driver.o [1]
-sprintf                 0x08003c81   0x38  Code  Gb  sprintf.o [3]
-state                   0x20000328    0x1  Data  Lc  ext_irq.o [1]
+memcmp                  0x08004a41   0x28  Code  Gb  memcmp.o [5]
+memcpy                  0x08004a35    0xc  Code  Gb  memcpy.o [3]
+point                   0x2000033a    0x1  Data  Lc  gate_protocol.o [1]
+rTxStatus               0x080024d3    0x8  Code  Gb  nrf905_driver.o [1]
+rxAddr                  0x080027d8    0x8  Data  Gb  nrf905_driver.o [1]
+rx_buff                 0x20000274   0x40  Data  Lc  rf_protocol.o [1]
+rx_data                 0x20000315    0x1  Data  Lc  nrf905_driver.o [1]
+sTxStatus               0x080024cb    0x8  Code  Gb  nrf905_driver.o [1]
+sensor_counter          0x20000328    0x4  Data  Lc  ext_irq.o [1]
+sprintf                 0x080027e1   0x38  Code  Gb  sprintf.o [3]
+state                   0x20000338    0x1  Data  Lc  ext_irq.o [1]
 strlen                  0x080013b7   0x10  Code  Gb  strlen.o [5]
-time                    0x20000320    0x4  Data  Lc  timer.o [1]
-timeout_flag            0x2000032c    0x1  Data  Gb  main.o [1]
-txAddr                  0x080054c0    0x8  Data  Gb  nrf905_driver.o [1]
-tx_data                 0x2000032d    0x1  Data  Lc  nrf905_driver.o [1]
-tx_status               0x2000032f    0x1  Data  Lc  nrf905_driver.o [1]
-uwTick                  0x2000031c    0x4  Data  Gb  stm32f0xx_hal.o [1]
+time                    0x20000330    0x4  Data  Lc  timer.o [1]
+timeout_flag            0x20000214    0x1  Data  Gb  main.o [1]
+txAddr                  0x080027d0    0x8  Data  Gb  nrf905_driver.o [1]
+tx_data                 0x20000314    0x1  Data  Lc  nrf905_driver.o [1]
+tx_status               0x2000033c    0x1  Data  Lc  nrf905_driver.o [1]
+uwTick                  0x2000032c    0x4  Data  Gb  stm32f0xx_hal.o [1]
 
 
-[1] = D:\Dropbox\Dimmer\Dimmer_WL\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj
+[1] = D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM\CortexM0+NrF905\Obj
 [2] = command line
 [3] = dl6M_tlf.a
 [4] = m6M_tl.a
 [5] = rt6M_tl.a
 [6] = shb_l.a
 
-  21 388 bytes of readonly  code memory
-     439 bytes of readonly  data memory
-   2 353 bytes of readwrite data memory
+  19 650 bytes of readonly  code memory
+     183 bytes of readonly  data memory
+   2 365 bytes of readwrite data memory
 
 Errors: none
 Warnings: none

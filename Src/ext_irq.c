@@ -7,6 +7,8 @@
 static char state =0;
 static char bstate =0;
 
+static int sensor_counter =0;
+
 __weak void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
 
@@ -37,4 +39,20 @@ char GetButtonState()        {
   _state = bstate;
   bstate = 0;
   return _state;
+}
+
+__weak void HAL_COMP_TriggerCallback(COMP_HandleTypeDef *hcomp)
+{
+ 
+  sensor_counter++;
+  
+}
+
+int GetSensorCounter()  {
+  return sensor_counter;
+  
+}
+
+void ResetSensorCounter()       {
+  sensor_counter =0;
 }

@@ -671,15 +671,7 @@ uint32_t HAL_COMP_GetOutputLevel(COMP_HandleTypeDef *hcomp)
   * @param  hcomp COMP handle
   * @retval None
   */
-__weak void HAL_COMP_TriggerCallback(COMP_HandleTypeDef *hcomp)
-{
-  /* Prevent unused argument(s) compilation warning */
-  UNUSED(hcomp);
 
-  /* NOTE : This function should not be modified, when the callback is needed,
-            the HAL_COMP_TriggerCallback should be implemented in the user file
-   */
-}
 
 
 /**

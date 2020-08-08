@@ -1,16 +1,16 @@
-"C:\Users\SDzhanov\Documents\IoT sensor\NRF905-CortexM0\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_dma.c"
+"D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\Drivers\STM32F0xx_HAL_Driver\Src\stm32f0xx_hal_dma.c"
 -std=c99
 -ferror-limit=100
 -I
-C:\Users\SDzhanov\Documents\IoT sensor\NRF905-CortexM0\EWARM/../Inc
+D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM/../Inc
 -I
-C:\Users\SDzhanov\Documents\IoT sensor\NRF905-CortexM0\EWARM/../Drivers/STM32F0xx_HAL_Driver/Inc
+D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM/../Drivers/STM32F0xx_HAL_Driver/Inc
 -I
-C:\Users\SDzhanov\Documents\IoT sensor\NRF905-CortexM0\EWARM/../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy
+D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM/../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy
 -I
-C:\Users\SDzhanov\Documents\IoT sensor\NRF905-CortexM0\EWARM/../Drivers/CMSIS/Include
+D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM/../Drivers/CMSIS/Include
 -I
-C:\Users\SDzhanov\Documents\IoT sensor\NRF905-CortexM0\EWARM/../Drivers/CMSIS/Device/ST/STM32F0xx/Include
+D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\EWARM/../Drivers/CMSIS/Device/ST/STM32F0xx/Include
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\arm\CMSIS\Include
 -I
@@ -18,15 +18,15 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\arm\inc
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\arm\inc\c
 -I
-C:\Users\SDzhanov\Documents\IoT sensor\NRF905-CortexM0\Inc
+D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\Inc
 -I
-C:\Users\SDzhanov\Documents\IoT sensor\NRF905-CortexM0\Drivers\STM32F0xx_HAL_Driver\Inc
+D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\Drivers\STM32F0xx_HAL_Driver\Inc
 -I
-C:\Users\SDzhanov\Documents\IoT sensor\NRF905-CortexM0\Drivers\STM32F0xx_HAL_Driver\Inc\Legacy
+D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\Drivers\STM32F0xx_HAL_Driver\Inc\Legacy
 -I
-C:\Users\SDzhanov\Documents\IoT sensor\NRF905-CortexM0\Drivers\CMSIS\Include
+D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\Drivers\CMSIS\Include
 -I
-C:\Users\SDzhanov\Documents\IoT sensor\NRF905-CortexM0\Drivers\CMSIS\Device\ST\STM32F0xx\Include
+D:\RF_Firmware\RF_Firmware\Sensor\NRF905-CortexM0\Drivers\CMSIS\Device\ST\STM32F0xx\Include
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\arm\CMSIS\Include
 -DUSE_HAL_DRIVER=1

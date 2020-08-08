@@ -135,23 +135,7 @@ int main(void)
    Nrf905Init(0x6C);
    sprintf(str, "iam%c%cnbt                        \n",ADDR,DEV_TYPE );
     TransmitMultiPacket(str,32);
-  // PowerDownMode();
-   
-  // HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFI);
- //  HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
- // PowerUpMode();
- //  ReceiveMode();
-   //while (1);
- // sprintf(str,"qwertyuiopasdfghjklzxcvbnmqwerty");
- // TransmitMultiPacket(str,32);
-  //HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
-  //while(1) {
-   // for (int i=0; i<0xFFFFFF; i++);
-   // TransmitMultiPacket(str, 32);
-  //}
- //  PowerDownMode();
-   
-   //HAL_GPIO_WritePin( LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
+ 
    
   while (1)
   {
@@ -159,37 +143,30 @@ int main(void)
    HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_STOPENTRY_WFI);
    SystemClock_Config();
    for (int i=0; i<0xFFFF; i++);
- //  HAL_GPIO_WritePin( OFF_2_5V_GPIO_Port, OFF_2_5V_Pin, GPIO_PIN_RESET);
+ 
+   ResetSensorCounter();
    HAL_GPIO_WritePin( PB2_GPIO_Port, PB2_Pin, GPIO_PIN_SET);
-   HAL_COMP_Start(&hcomp2);
+   HAL_COMP_Start_IT(&hcomp2);
    HAL_COMP_Start(&hcomp1);
-   SetTimer(135);
-   char comp_level=0;
-   int comp_counter = 0;
-   while (GetTimer()>0) {
-     if ((HAL_COMP_GetOutputLevel(&hcomp2)==COMP_OUTPUTLEVEL_HIGH)&&(comp_level==0)){
-       comp_level =1;
-       comp_counter++;
-       
-     }
-      if ((HAL_COMP_GetOutputLevel(&hcomp2)==COMP_OUTPUTLEVEL_LOW)&&(comp_level==1)){
-       comp_level =0;
-       
-     }
-     
-   }
+   
+   
+
+   SetTimer(100);
+   while (GetTimer()>0);
+   HAL_COMP_Stop_IT(&hcomp2);
+   
+   int comp_counter = GetSensorCounter();
+   
    
    
    char bat_status;
    if (HAL_COMP_GetOutputLevel(&hcomp1)==COMP_OUTPUTLEVEL_LOW) bat_status = 0;
    else bat_status = 1;
-   HAL_COMP_Stop(&hcomp2);
+   
    HAL_COMP_Stop(&hcomp1);
    
- // for (int i=0; i<0xFFFFF; i++);                          // delay for stable level
-  // bat_state = GetBatteryStatus();
-
-   //HAL_GPIO_WritePin( OFF_2_5V_GPIO_Port, OFF_2_5V_Pin, GPIO_PIN_SET);
+   
+ 
    HAL_GPIO_WritePin( PB2_GPIO_Port, PB2_Pin, GPIO_PIN_RESET);
    
    PowerUpMode();
@@ -200,7 +177,7 @@ int main(void)
    if (GetButtonState())        {
      sprintf(str, "iam%c%cbutton\n",ADDR,DEV_TYPE );
    }
-   float temperature = 0.0626*(float)comp_counter - 50.7;
+   float temperature = 0.0625*(float)comp_counter - 50.0;
    temp = (int)temperature;
    if (timeout_flag) {
      if(bat_status)sprintf(str, "iam%c%cnbt %d \n",ADDR,DEV_TYPE,temp);
@@ -353,7 +330,7 @@ static void MX_COMP2_Init(void)
   hcomp2.Init.Hysteresis = COMP_HYSTERESIS_NONE;
   hcomp2.Init.Mode = COMP_MODE_HIGHSPEED;
   hcomp2.Init.WindowMode = COMP_WINDOWMODE_DISABLE;
-  hcomp2.Init.TriggerMode = COMP_TRIGGERMODE_NONE;
+  hcomp2.Init.TriggerMode = COMP_TRIGGERMODE_IT_RISING;
   if (HAL_COMP_Init(&hcomp2) != HAL_OK)
   {
     Error_Handler();
@@ -425,7 +402,7 @@ static void MX_RTC_Init(void)
   */
   sAlarm.AlarmTime.Hours = 0x0;
   sAlarm.AlarmTime.Minutes = 0x03;
-  sAlarm.AlarmTime.Seconds = 0x30;
+  sAlarm.AlarmTime.Seconds = 0x0;
   sAlarm.AlarmTime.SubSeconds = 0x0;
   sAlarm.AlarmTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
   sAlarm.AlarmTime.StoreOperation = RTC_STOREOPERATION_RESET;
